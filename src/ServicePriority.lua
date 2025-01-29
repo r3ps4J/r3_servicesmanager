@@ -1,4 +1,6 @@
----@class ServicePriority
+---@alias ServicePriority 0 | 1 | 2 | 3 | 4
+
+---@type table<string, ServicePriority>
 local ServicePriority = {
     Lowest = 0,
     Low = 1,

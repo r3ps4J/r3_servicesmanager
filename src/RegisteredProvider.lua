@@ -4,7 +4,7 @@ local table_contains = require "utils.table_contains"
 ---The constructor for the RegisteredProvider class.
 ---@param service string
 ---@param provider table
----@param priority number
+---@param priority ServicePriority
 ---@param resource string
 ---@param invokingResource string
 ---@return RegisteredProvider

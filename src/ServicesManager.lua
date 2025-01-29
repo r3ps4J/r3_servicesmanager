@@ -20,7 +20,7 @@ local function ServicesManager()
     ---Registers a provider for a service.
     ---@param service string
     ---@param provider table
-    ---@param priority number
+    ---@param priority ServicePriority
     ---@param resource string
     function servicesManager.register(service, provider, priority, resource)
         local invokingResource = GetInvokingResource()
