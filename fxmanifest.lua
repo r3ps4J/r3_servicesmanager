@@ -13,3 +13,6 @@ contact "discord.gg/bEWmBbg"
 
 -- Manifest
 shared_script "dist/main.lua"
+
+client_script "providers/**/cl_*.lua"
+server_script "providers/**/sv_*.lua"
