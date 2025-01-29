@@ -59,7 +59,7 @@ local function ServicesManager()
 
     ---Returns all registrations for a resource.
     ---@param resource string
-    ---@return RegisteredProvider[] | nil
+    ---@return RegisteredProvider[]
     function servicesManager.getRegistrationsForResource(resource)
         local registrations = {}
 
