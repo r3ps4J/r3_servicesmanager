@@ -6,20 +6,18 @@ local table_contains = require "utils.table_contains"
 ---@param provider table
 ---@param priority ServicePriority
 ---@param resource string
----@param invokingResource string
+---@param invokingResource? string
 ---@return RegisteredProvider
 function RegisteredProvider(service, provider, priority, resource, invokingResource)
     assert(service ~= nil, "service cannot be nil")
     assert(provider ~= nil, "provider cannot be nil")
     assert(priority ~= nil, "priority cannot be nil")
     assert(resource ~= nil, "resource cannot be nil")
-    assert(invokingResource ~= nil, "invokingResource cannot be nil")
 
     assert(type(service) == "string", "service must be a string")
     assert(type(provider) == "table", "provider must be a table")
     assert(table_contains(ServicePriority, priority), "priority must be a valid ServicePriority")
     assert(type(resource) == "string", "resource must be a string")
-    assert(type(invokingResource) == "string", "invokingResource must be a string")
 
     ---@class RegisteredProvider
     local registeredProvider = {}
