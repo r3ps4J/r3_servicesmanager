@@ -21,12 +21,20 @@ ServicePriority = require "ServicePriority"
 ---@param priority ServicePriority
 ---@param resource string
 function RegisterOnResourceStart(service, createProvider, priority, resource)
+    local function registerProvider()
+        local provider = createProvider()
+        servicesManager.register(service, provider, priority, resource)
+    end
+
+    if GetResourceState(resource) == "started" then
+        registerProvider()
+    end
+
     AddEventHandler("onResourceStart", function(resourceName)
         if resourceName ~= resource then
             return
         end
 
-        local provider = createProvider()
-        servicesManager.register(service, provider, priority, resource)
+        registerProvider()
     end)
 end
