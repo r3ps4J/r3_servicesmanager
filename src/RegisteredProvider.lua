@@ -30,23 +30,23 @@ function RegisteredProvider(service, provider, priority, resource, invokingResou
     local resource = resource
     local invokingResource = invokingResource
 
-    function registeredProvider:getService()
+    function registeredProvider.getService()
         return service
     end
 
-    function registeredProvider:getProvider()
+    function registeredProvider.getProvider()
         return provider
     end
 
-    function registeredProvider:getPriority()
+    function registeredProvider.getPriority()
         return priority
     end
 
-    function registeredProvider:getResource()
+    function registeredProvider.getResource()
         return resource
     end
 
-    function registeredProvider:getInvokingResource()
+    function registeredProvider.getInvokingResource()
         return invokingResource
     end
 

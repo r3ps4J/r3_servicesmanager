@@ -13,7 +13,7 @@ local function ServicesManager()
     ---@param service string
     local function sortProvidersForService(service)
         table.sort(providerMap[service], function(a, b)
-            return a:getPriority() > b:getPriority()
+            return a.getPriority() > b.getPriority()
         end)
     end
 
@@ -40,7 +40,7 @@ local function ServicesManager()
     ---@param service string
     ---@return RegisteredProvider | nil
     function servicesManager.load(service)
-        return providerMap[service] and providerMap[service][1] or nil
+        return providerMap[service] and providerMap[service][1].getProvider() or nil
     end
 
     ---Returns the registered provider with the highest priority for a service, or nil if there is none.
@@ -65,7 +65,7 @@ local function ServicesManager()
 
         for service, providers in pairs(providerMap) do
             for i, provider in ipairs(providers) do
-                if provider:getResource() == resource then
+                if provider.getResource() == resource then
                     table.insert(registrations, provider)
                 end
             end
@@ -97,7 +97,7 @@ local function ServicesManager()
         for service, providers in pairs(providerMap) do
             local unregisteredProviders = {}
             for i, provider in ipairs(providers) do
-                if provider:getResource() == resource or provider:getInvokingResource() == resource then
+                if provider.getResource() == resource or provider.getInvokingResource() == resource then
                     table.insert(unregisteredProviders, provider)
                     providerMap[service][i] = nil
                 end
