@@ -11,3 +11,6 @@ exports("getKnownServices", servicesManager.getKnownServices)
 exports("isProvidedFor", servicesManager.isProvidedFor)
 
 AddEventHandler("onResourceStop", servicesManager.unregisterAllForResource)
+
+-- Register global values for use in providers
+ServicePriority = require "ServicePriority"
