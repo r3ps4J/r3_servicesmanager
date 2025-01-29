@@ -1,0 +1,13 @@
+{
+  "name": "r3_servicesmanager",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "bundle": "node scripts/bundle.js",
+    "watch": "npm run bundle -- --watch"
+  },
+  "devDependencies": {
+    "gaze": "^1.1.3",
+    "luabundle": "github:r3ps4J/luabundle"
+  }
+}
