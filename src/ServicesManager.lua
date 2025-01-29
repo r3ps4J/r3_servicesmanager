@@ -13,6 +13,14 @@ local function ServicesManager()
     ---@param service string
     local function sortProvidersForService(service)
         table.sort(providerMap[service], function(a, b)
+            -- Treat nil values as less than everything
+            if not a then
+                return false
+            end
+            if not b then
+                return true
+            end
+
             return a.getPriority() > b.getPriority()
         end)
     end
