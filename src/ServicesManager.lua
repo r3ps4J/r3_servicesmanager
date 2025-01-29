@@ -21,9 +21,10 @@ local function ServicesManager()
     ---@param service string
     ---@param provider table
     ---@param priority number
-    function servicesManager.register(service, provider, priority)
+    ---@param resource string
+    function servicesManager.register(service, provider, priority, resource)
         local invokingResource = GetInvokingResource()
-        local registeredProvider = RegisteredProvider(service, provider, priority, invokingResource)
+        local registeredProvider = RegisteredProvider(service, provider, priority, resource, invokingResource)
 
         if not providerMap[service] then
             providerMap[service] = {}
@@ -96,7 +97,7 @@ local function ServicesManager()
         for service, providers in pairs(providerMap) do
             local unregisteredProviders = {}
             for i, provider in ipairs(providers) do
-                if provider:getResource() == resource then
+                if provider:getResource() == resource or provider:getInvokingResource() == resource then
                     table.insert(unregisteredProviders, provider)
                     providerMap[service][i] = nil
                 end
