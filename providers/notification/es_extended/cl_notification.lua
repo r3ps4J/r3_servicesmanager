@@ -12,7 +12,8 @@ RegisterOnResourceStart("notification", function()
     local notificationProvider = {
         showNotification = function(message, options)
             local style = options and options.style and styles[options.style] or nil
-            ESX.ShowNotification(message, style, options and options.duration or nil)
+            local duration = options and options.duration or nil
+            ESX.ShowNotification(message, style, duration)
         end,
     }
 

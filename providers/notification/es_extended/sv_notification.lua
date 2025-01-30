@@ -10,7 +10,8 @@ RegisterOnResourceStart("notification", function()
     local notificationProvider = {
         showNotification = function(playerId, message, options)
             local style = options and options.style and styles[options.style] or nil
-            TriggerClientEvent("esx:showNotification", playerId, message, style, options and options.duration)
+            local duration = options and options.duration or nil
+            TriggerClientEvent("esx:showNotification", playerId, message, style, duration)
         end,
     }
 
