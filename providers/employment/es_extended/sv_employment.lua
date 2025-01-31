@@ -32,7 +32,17 @@ RegisterOnResourceStart("employment", function()
             }
         end,
         jobExists = function(jobName, jobGrade)
-            return ESX.DoesJobExist(jobName, jobGrade)
+            local esxJob = ESX.GetJobs()[jobName]
+
+            if esxJob == nil then
+                return false
+            end
+
+            if jobGrade ~= nil and esxJob.grades[jobGrade] == nil then
+                return false
+            end
+
+            return true
         end,
         getOnlineJobCount = function(jobName)
             local xPlayers = ESX.GetExtendedPlayers("job", jobName)
