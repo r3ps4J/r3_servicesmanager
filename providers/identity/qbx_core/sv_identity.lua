@@ -1,0 +1,25 @@
+RegisterOnResourceStart("identity", function()
+    ---@type ServerIdentityProvider
+    local identityProvider = {
+        getPlayerIdentifier = function(playerId)
+            local player = exports.qbx_core:GetPlayer(source)
+
+            if player == nil then
+                return nil
+            end
+
+            return player.PlayerData.citizenid
+        end,
+        getPlayerName = function(playerId)
+            local player = exports.qbx_core:GetPlayer(source)
+
+            if player == nil then
+                return nil
+            end
+
+            return ("%s %s"):format(player.PlayerData.charinfo.firstname, player.PlayerData.charinfo.lastname)
+        end,
+    }
+
+    return identityProvider
+end, ServicePriority.Lowest, "qbx_core")
