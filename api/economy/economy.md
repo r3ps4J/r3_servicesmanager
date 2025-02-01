@@ -84,7 +84,7 @@ Returns:
 Checks whether a player's balance in the given account is bigger than or equal to the specified amount.
 
 ```lua
-employment.playerHasBalance(playerId, account, amount)
+economy.playerHasBalance(playerId, account, amount)
 ```
 
 Parameters:
@@ -97,7 +97,7 @@ Returns:
 - `false` if the player's balance is less than the specified amount, or if the player could not be found.
 
 ## Types
-The following types are used within the employment provider:
+The following types are used within the economy provider:
 
 ### AccountType
 A union type of the possible account types within the economy provider.
@@ -109,7 +109,7 @@ Possible values:
 *These values get mapped to the actual accounts for each provider.*
 
 ## Registration
-To register an employement provider, ensure it implements all methods described above. Check out [`employement.lua`](./definitions/employement.lua) and [`employment.ts`](./definitions/employement.ts) for type definitions.
+To register an economy provider, ensure it implements all methods described above. Check out [`economy.lua`](./definitions/economy.lua) and [`economy.ts`](./definitions/economy.ts) for type definitions.
 
 When your provider object implements all methods, you can register it as follows:
 
