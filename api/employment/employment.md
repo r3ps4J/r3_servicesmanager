@@ -132,18 +132,18 @@ Fields:
 - isBoss: `boolean`
 
 ## Registration
-To register an employement provider, ensure it implements all methods described above. Check out [`employement.lua`](./definitions/employement.lua) and [`employment.ts`](./definitions/employement.ts) for type definitions.
+To register an employment provider, ensure it implements all methods described above. Check out [`employment.lua`](./definitions/employment.lua) and [`employment.ts`](./definitions/employment.ts) for type definitions.
 
 When your provider object implements all methods, you can register it as follows:
 
 Lua:
 ```lua
-exports.r3_servicesmanager:register("employement", provider, priority, GetCurrentResourceName())
+exports.r3_servicesmanager:register("employment", provider, priority, GetCurrentResourceName())
 ```
 
 JavaScript:
 ```js
-exports.r3_servicesmanager.register("employement", provider, priority, GetCurrentResourceName());
+exports.r3_servicesmanager.register("employment", provider, priority, GetCurrentResourceName());
 ```
 
 For priority, it is recommended to use priority `2`, this corresponds to `ServicePriority.Normal`. It would be even better to allow server owners to configure the used priority in the configuration of your resource so that they can choose which resource takes priority.
