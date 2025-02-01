@@ -1,0 +1,3 @@
+---@class ServerIdentityProvider
+---@field getPlayerIdentifier fun(playerId: integer): string | nil
+---@field getPlayerName fun(playerId: integer): string | nil
