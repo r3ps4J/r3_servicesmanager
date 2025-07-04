@@ -2,7 +2,7 @@ RegisterOnResourceStart("identity", function()
     ---@type ServerIdentityProvider
     local identityProvider = {
         getPlayerIdentifier = function(playerId)
-            local player = exports.qbx_core:GetPlayer(source)
+            local player = exports.qbx_core:GetPlayer(playerId)
 
             if player == nil then
                 return nil
@@ -11,7 +11,7 @@ RegisterOnResourceStart("identity", function()
             return player.PlayerData.citizenid
         end,
         getPlayerName = function(playerId)
-            local player = exports.qbx_core:GetPlayer(source)
+            local player = exports.qbx_core:GetPlayer(playerId)
 
             if player == nil then
                 return nil
