@@ -65,7 +65,7 @@ Notes:
 - All values are converted to the corresponding values for the currently registered provider.
 
 ## Registration
-To register an notification provider, ensure it implements all methods described above. Check out [`notification.lua`](./definitions/notification.lua) and [`notification.ts`](./definitions/notification.ts) for type definitions.
+To register a notification provider, ensure it implements all methods described above. Check out [`notification.lua`](./definitions/notification.lua) and [`notification.ts`](./definitions/notification.ts) for type definitions.
 
 When your provider object implements all methods, you can register it as follows:
 
