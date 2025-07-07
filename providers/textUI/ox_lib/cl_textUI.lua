@@ -10,4 +10,4 @@ RegisterOnResourceStart("textUI", function()
     }
 
     return textUIProvider
-end, ServicePriority.Lowest, "ox_lib")
+end, ServicePriority.Low, "ox_lib")
