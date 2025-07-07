@@ -1,0 +1,2 @@
+---@class ServerUsableItemsProvider
+---@field registerUsableItem fun(itemName: string, cb: fun(playerId: integer): nil): nil
