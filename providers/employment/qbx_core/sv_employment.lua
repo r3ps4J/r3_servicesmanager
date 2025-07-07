@@ -5,7 +5,6 @@ RegisterOnResourceStart("employment", function()
     employmentProvider = {
         getJob = function(jobName)
             local qbxJob = exports.qbx_core:GetJob(jobName)
-
             if qbxJob == nil then
                 return nil
             end
@@ -31,7 +30,6 @@ RegisterOnResourceStart("employment", function()
         end,
         jobExists = function(jobName, jobGrade)
             local qbxJob = exports.qbox_core.GetJob(jobName)
-
             if qbxJob == nil then
                 return false
             end
@@ -48,7 +46,6 @@ RegisterOnResourceStart("employment", function()
         end,
         getPlayerJob = function(playerId)
             local player = exports.qbx_core:GetPlayer(playerId)
-
             if player == nil then
                 return nil
             end
@@ -68,19 +65,12 @@ RegisterOnResourceStart("employment", function()
             }
         end,
         setPlayerJob = function(playerId, jobName, jobGrade)
-            if not employmentProvider.jobExists(jobName, jobGrade) then
-                return false
-            end
-
             local player = exports.qbx_core:GetPlayer(playerId)
-
             if player == nil then
                 return false
             end
 
-            exports.qbx_core:SetJob(playerId, jobName, jobGrade)
-
-            return true
+            return exports.qbx_core:SetJob(playerId, jobName, jobGrade)
         end,
         playerHasJob = function(playerId, jobName, jobGrade)
             local player = exports.qbx_core:GetPlayer(playerId)
