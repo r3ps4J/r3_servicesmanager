@@ -28,6 +28,9 @@ Parameters:
 - itemName: `string`
 - cb: `fun(playerId: integer): nil`
 
+Returns:
+- `nil`
+
 ## Registration
 To register a usable items provider, ensure it implements all methods described above. Check out [`usableItems.lua`](./definitions/usableItems.lua) and [`usableItems.ts`](./definitions/usableItems.ts) for type definitions.
 
