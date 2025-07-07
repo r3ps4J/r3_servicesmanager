@@ -1,0 +1,3 @@
+---@class ClientTextUIProvider
+---@field showTextUI fun(text: string): nil
+---@field hideTextUI fun(): nil
