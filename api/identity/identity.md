@@ -32,10 +32,10 @@ Returns:
 - `nil` if the player could not be found.
 
 #### getPlayerName
-Retrieves information of the player's current character.
+Retrieves the name of the player's current character.
 
 ```lua
-identity.getPlayer(playerId)
+identity.getPlayerName(playerId)
 ```
 
 Parameters:
