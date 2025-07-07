@@ -1,5 +1,5 @@
 RegisterOnResourceStart("economy", function()
-    local ESX = exports["es_extended"].getSharedObject()
+    local ESX = exports["es_extended"]:getSharedObject()
 
     ---@type table<AccountType, string>
     local accounts = {

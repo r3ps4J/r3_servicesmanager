@@ -1,5 +1,5 @@
 RegisterOnResourceStart("notification", function()
-    local ESX = exports["es_extended"].getSharedObject()
+    local ESX = exports["es_extended"]:getSharedObject()
 
     ---@type table<NotificationStyle, string>
     local styles = {

@@ -1,5 +1,5 @@
 RegisterOnResourceStart("identity", function()
-    local ESX = exports["es_extended"].getSharedObject()
+    local ESX = exports["es_extended"]:getSharedObject()
 
     ---@type ServerIdentityProvider
     local identityProvider = {

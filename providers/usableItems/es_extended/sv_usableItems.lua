@@ -1,11 +1,11 @@
 RegisterOnResourceStart("usableItems", function()
-    local ESX = exports["es_extended"].getSharedObject()
+    local ESX = exports["es_extended"]:getSharedObject()
 
     ---@type ServerUsableItemsProvider
     local usableItemsProvider = {
-        registerUsableItem = function (itemName, cb)
+        registerUsableItem = function(itemName, cb)
             ESX.RegisterUsableItem(itemName, cb)
-        end
+        end,
     }
 
     return usableItemsProvider
