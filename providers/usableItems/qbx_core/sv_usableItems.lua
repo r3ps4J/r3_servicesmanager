@@ -1,9 +1,9 @@
 RegisterOnResourceStart("usableItems", function()
     ---@type ServerUsableItemsProvider
     local usableItemsProvider = {
-        registerUsableItem = function (itemName, cb)
+        registerUsableItem = function(itemName, cb)
             exports.qbx_core:CreateUseableItem(itemName, cb)
-        end
+        end,
     }
 
     return usableItemsProvider
