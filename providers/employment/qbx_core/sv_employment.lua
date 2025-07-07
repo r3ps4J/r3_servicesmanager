@@ -16,10 +16,10 @@ RegisterOnResourceStart("employment", function()
 
             for grade, qbxJobGrade in pairs(qbxJob.grades) do
                 grades[grade] = {
-                    name = qbxJob.name, -- qbox doesn't differentiate between grade name and grade label
+                    name = qbxJobGrade.name, -- qbox doesn't differentiate between grade name and grade label
                     label = qbxJobGrade.name,
-                    salary = qbxJob.payment,
-                    isBoss = qbxJob.isboss ~= nil and qbxJob.isboss,
+                    salary = qbxJobGrade.payment,
+                    isBoss = qbxJobGrade.isboss ~= nil and qbxJobGrade.isboss,
                 }
             end
 
