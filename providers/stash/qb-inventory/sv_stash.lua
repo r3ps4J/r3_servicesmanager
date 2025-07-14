@@ -1,6 +1,4 @@
-RegisterOnResourceStart("inventory", function()
-    local QBCore = exports["qb-core"]:GetCoreObject({ "Functions" })
-
+RegisterOnResourceStart("stash", function()
     ---@param inventoryRef InventoryRef
     local function getInventory(inventoryRef)
         if inventoryRef.type == "trunk" then
@@ -14,14 +12,7 @@ RegisterOnResourceStart("inventory", function()
     ---@param inv integer | string
     ---@param itemName string
     local function getItemCount(inv, itemName)
-        local inventory
-        local Player = QBCore.Functions.GetPlayer(inv)
-        if Player then
-            inventory = Player.PlayerData.items
-        else
-            inventory = exports["qb-inventory"]:GetInventory(inv)
-        end
-
+        local inventory = exports["qb-inventory"]:GetInventory(inv)
         local count = 0
         for _, item in pairs(inventory) do
             if itemName == item.name then
@@ -31,7 +22,7 @@ RegisterOnResourceStart("inventory", function()
         return count
     end
 
-    ---@type ServerInventoryProvider
+    ---@type ServerStashProvider
     local inventoryProvider = {
         addItem = function(inventoryRef, itemName, amount)
             local inv = getInventory(inventoryRef)
@@ -49,7 +40,7 @@ RegisterOnResourceStart("inventory", function()
             local inv = getInventory(inventoryRef)
             return getItemCount(inv, itemName) > amount
         end,
-        canCarryItem = function(inventoryRef, itemName, amount)
+        canAddItem = function(inventoryRef, itemName, amount)
             local inv = getInventory(inventoryRef)
             return exports["qb-inventory"]:CanAddItem(inv, itemName, amount)
         end,

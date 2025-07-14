@@ -1,5 +1,5 @@
 # Inventory
-The inventory providers provide a service that allows resources to interact with the inventory of players and objects (i.e. stashes, vehicles).
+The inventory providers provide a service that allows resources to interact with the inventory of players.
 
 ## Usage
 To retrieve the inventory provider, use the load function with `"inventory"` for the `service` parameter.
@@ -18,14 +18,14 @@ const inventoryProvider = exports.r3_servicesmanager.load("inventory");
 On the server side, the following methods are available:
 
 #### addItem
-Adds an item to the specified inventory.
+Adds an item to the specified player's inventory.
 
 ```lua
-inventoryProvider.addItem(inventoryRef, itemName, amount)
+inventoryProvider.addItem(playerId, itemName, amount)
 ```
 
 Parameters:
-- inventoryRef: [`InventoryRef`](#inventoryref)
+- playerId: `integer`
 - itemName: `string`
 - amount: `integer`
 
@@ -34,50 +34,50 @@ Returns:
 - `false` if the item wasn't successfully added (i.e. the player could not carry it).
 
 #### getItemCount
-Returns the count of an item in the specified inventory.
+Returns the count of an item in the specified player's inventory.
 
 ```lua
-inventoryProvider.getItemCount(inventoryRef, itemName)
+inventoryProvider.getItemCount(playerId, itemName)
 ```
 
 Parameters:
-- inventoryRef: [`InventoryRef`](#inventoryref)
+- playerId: `integer`
 - itemName: `string`
 
 Returns:
 - `integer`
 
 #### hasItem
-Checks whether an inventory has a certain item and if the amount of the given item is bigger than or equal to the specified amount.
+Checks whether a player has a certain item and if the amount of the given item is bigger than or equal to the specified amount.
 
 ```lua
-inventory.hasItem(inventoryRef, itemName, amount)
+inventoryProvider.hasItem(playerId, itemName, amount)
 ```
 
 Parameters:
-- inventoryRef: [`InventoryRef`](#inventoryref)
+- playerId: `integer`
 - itemName: `string`
 - amount: `integer`
 
 Returns:
-- `true` if the inventory has the given item and the amount of the given item is bigger than or equal to the specified amount.
-- `false` if the the inventory doesn't have the given item or the amount of the given item is less than the specified amount.
+- `true` if the player has the given item and the amount of the given item is bigger than or equal to the specified amount.
+- `false` if the the player doesn't have the given item or the amount of the given item is less than the specified amount.
 
 #### canCarryItem
-Checks whether an inventory can carry a specific amount of a certain item.
+Checks whether a player can carry a specific amount of a certain item.
 
 ```lua
-inventory.canCarryItem(inventoryRef, itemName, amount)
+inventoryProvider.canCarryItem(playerId, itemName, amount)
 ```
 
 Parameters:
-- inventoryRef: [`InventoryRef`](#inventoryref)
+- playerId: `integer`
 - itemName: `string`
 - amount: `integer`
 
 Returns:
-- `true` if the inventory can carry the given amount of the specified item.
-- `false` if the inventory can't carry the given amount of the specified item.
+- `true` if the player can carry the given amount of the specified item.
+- `false` if the player can't carry the given amount of the specified item.
 
 ## Types
 The following types are used within the inventory provider:
