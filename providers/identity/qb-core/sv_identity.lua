@@ -12,7 +12,7 @@ RegisterOnResourceStart("identity", function()
             return Player.PlayerData.citizenid
         end,
         getPlayerName = function(playerId)
-            local Player = exports.qbx_core:GetPlayer(playerId)
+            local Player = QBCore.Functions.GetPlayer(playerId)
             if Player == nil then
                 return nil
             end
