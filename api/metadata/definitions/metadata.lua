@@ -1,0 +1,3 @@
+---@class ServerMetadataProvider
+---@field getPlayerMetadata fun(playerId: integer, key: string): any | nil
+---@field setPlayerMetadata fun(playerId: integer, key: string, value: any): boolean
