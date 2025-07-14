@@ -6,12 +6,12 @@ To retrieve the economy provider, use the load function with `"economy"` for the
 
 Lua:
 ```lua
-local economy = exports.r3_servicesmanager:load("economy")
+local economyProvider = exports.r3_servicesmanager:load("economy")
 ```
 
 JavaScript:
 ```js
-const economy = exports.r3_servicesmanager.load("economy");
+const economyProvider = exports.r3_servicesmanager.load("economy");
 ```
 
 ### Server
@@ -21,7 +21,7 @@ On the server side, the following methods are available:
 Retrieves the balance of a player for the specified account.
 
 ```lua
-economy.getPlayerBalance(playerId, account)
+economyProvider.getPlayerBalance(playerId, account)
 ```
 
 Parameters:
@@ -36,7 +36,7 @@ Returns:
 Sets the player's balance to the specified amount for the given account, and returns whether or not it was succesful.
 
 ```lua
-economy.setPlayerBalance(playerId, account, amount)
+economyProvider.setPlayerBalance(playerId, account, amount)
 ```
 
 Parameters:
@@ -52,7 +52,7 @@ Returns:
 Adds money to the player's balance in the given account, and returns whether or not it was succesful.
 
 ```lua
-economy.addPlayerBalance(playerId, account, amount)
+economyProvider.addPlayerBalance(playerId, account, amount)
 ```
 
 Parameters:
@@ -68,7 +68,7 @@ Returns:
 Removes money from the player's balance in the given account, and returns whether or not it was succesful.
 
 ```lua
-economy.removePlayerBalance(playerId, account, amount)
+economyProvider.removePlayerBalance(playerId, account, amount)
 ```
 
 Parameters:
@@ -84,7 +84,7 @@ Returns:
 Checks whether a player's balance in the given account is bigger than or equal to the specified amount.
 
 ```lua
-economy.playerHasBalance(playerId, account, amount)
+economyProvider.playerHasBalance(playerId, account, amount)
 ```
 
 Parameters:

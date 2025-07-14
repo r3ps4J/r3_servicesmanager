@@ -6,12 +6,12 @@ To retrieve the identity provider, use the load function with `"identity"` for t
 
 Lua:
 ```lua
-local identity = exports.r3_servicesmanager:load("identity")
+local identityProvider = exports.r3_servicesmanager:load("identity")
 ```
 
 JavaScript:
 ```js
-const identity = exports.r3_servicesmanager.load("identity");
+const identityProvider = exports.r3_servicesmanager.load("identity");
 ```
 
 ### Server
@@ -21,7 +21,7 @@ On the server side, the following methods are available:
 Retrieves the identifier of a player. Use this identifier to store character-specific information.
 
 ```lua
-identity.getPlayerIdentifier(playerId)
+identityProvider.getPlayerIdentifier(playerId)
 ```
 
 Parameters:
@@ -35,7 +35,7 @@ Returns:
 Retrieves the name of the player's current character.
 
 ```lua
-identity.getPlayerName(playerId)
+identityProvider.getPlayerName(playerId)
 ```
 
 Parameters:

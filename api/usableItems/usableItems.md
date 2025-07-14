@@ -6,12 +6,12 @@ To retrieve the usable items provider, use the load function with `"usableItems"
 
 Lua:
 ```lua
-local usableItems = exports.r3_servicesmanager:load("usableItems")
+local usableItemsProvider = exports.r3_servicesmanager:load("usableItems")
 ```
 
 JavaScript:
 ```js
-const usableItems = exports.r3_servicesmanager.load("usableItems");
+const usableItemsProvider = exports.r3_servicesmanager.load("usableItems");
 ```
 
 ### Server
@@ -21,7 +21,7 @@ On the server side, the following methods are available:
 Registers a usable item.
 
 ```lua
-usableItems.registerUsableItem(itemName, cb)
+usableItemsProvider.registerUsableItem(itemName, cb)
 ```
 
 Parameters:

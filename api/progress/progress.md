@@ -6,12 +6,12 @@ To retrieve the progress provider, use the load function with `"progress"` for t
 
 Lua:
 ```lua
-local progress = exports.r3_servicesmanager:load("progress")
+local progressProvider = exports.r3_servicesmanager:load("progress")
 ```
 
 JavaScript:
 ```js
-const progress = exports.r3_servicesmanager.load("progress");
+const progressProvider = exports.r3_servicesmanager.load("progress");
 ```
 
 ### Client
@@ -21,7 +21,7 @@ On the client side, the following methods are available:
 Starts a new progress bar for the player.
 
 ```lua
-progress.startProgress(label, duration, progressOptions)
+progressProvider.startProgress(label, duration, progressOptions)
 ```
 
 Parameters:
@@ -36,7 +36,7 @@ Returns:
 Cancels the currently active progress bar.
 
 ```lua
-progress.cancelProgress()
+progressProvider.cancelProgress()
 ```
 
 Returns:

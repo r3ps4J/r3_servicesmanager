@@ -6,12 +6,12 @@ To retrieve the notification provider, use the load function with `"notification
 
 Lua:
 ```lua
-local notification = exports.r3_servicesmanager:load("notification")
+local notificationProvider = exports.r3_servicesmanager:load("notification")
 ```
 
 JavaScript:
 ```js
-const notification = exports.r3_servicesmanager.load("notification");
+const notificationProvider = exports.r3_servicesmanager.load("notification");
 ```
 
 ### Client
@@ -21,7 +21,7 @@ On the client side, the following methods are available:
 Shows a notification to the player.
 
 ```lua
-notification.showNotification(message, notificationOptions)
+notificationProvider.showNotification(message, notificationOptions)
 ```
 
 Parameters:
@@ -38,7 +38,7 @@ On the server side, the following methods are available:
 Shows a notification to a player specified by their player ID.
 
 ```lua
-notification.showNotification(playerId, message, notificationOptions)
+notificationProvider.showNotification(playerId, message, notificationOptions)
 ```
 
 Parameters:

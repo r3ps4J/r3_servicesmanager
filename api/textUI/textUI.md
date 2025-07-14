@@ -6,12 +6,12 @@ To retrieve the text UI provider, use the load function with `"textUI"` for the 
 
 Lua:
 ```lua
-local textUI = exports.r3_servicesmanager:load("textUI")
+local textUIProvider = exports.r3_servicesmanager:load("textUI")
 ```
 
 JavaScript:
 ```js
-const textUI = exports.r3_servicesmanager.load("textUI");
+const textUIProvider = exports.r3_servicesmanager.load("textUI");
 ```
 
 ### Client
@@ -21,7 +21,7 @@ On the client side, the following methods are available:
 Shows a new text UI to the player.
 
 ```lua
-textUI.showTextUI(text)
+textUIProvider.showTextUI(text)
 ```
 
 Parameters:
@@ -34,7 +34,7 @@ Returns:
 Hides the currently active text UI.
 
 ```lua
-textUI.hideTextUI()
+textUIProvider.hideTextUI()
 ```
 
 Returns:

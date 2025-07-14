@@ -6,12 +6,12 @@ To retrieve the employment provider, use the load function with `"employment"` f
 
 Lua:
 ```lua
-local employment = exports.r3_servicesmanager:load("employment")
+local employmentProvider = exports.r3_servicesmanager:load("employment")
 ```
 
 JavaScript:
 ```js
-const employment = exports.r3_servicesmanager.load("employment");
+const employmentProvider = exports.r3_servicesmanager.load("employment");
 ```
 
 ### Server
@@ -21,7 +21,7 @@ On the server side, the following methods are available:
 Retrieves a job object based on the name of the job.
 
 ```lua
-employment.getJob(jobName)
+employmentProvider.getJob(jobName)
 ```
 
 Parameters:
@@ -34,7 +34,7 @@ Returns:
 Checks whether or not a job exists, optionally with a certain grade.
 
 ```lua
-employment.jobExists(jobName, jobGrade)
+employmentProvider.jobExists(jobName, jobGrade)
 ```
 
 Parameters:
@@ -48,7 +48,7 @@ Returns:
 Returns the number of players currently online that have the specified job (and are on duty, if the provider supports it).
 
 ```lua
-employment.getOnlineJobCount(jobName)
+employmentProvider.getOnlineJobCount(jobName)
 ```
 
 Parameters:
@@ -61,7 +61,7 @@ Returns:
 Returns the job of a player, or nil if the player is not online.
 
 ```lua
-employment.getPlayerJob(playerId)
+employmentProvider.getPlayerJob(playerId)
 ```
 
 Parameters:
@@ -75,7 +75,7 @@ Returns:
 Sets the player job to the specified job name and grade, and returns whether or not it was succesful.
 
 ```lua
-employment.setPlayerJob(playerId, jobName, jobGrade)
+employmentProvider.setPlayerJob(playerId, jobName, jobGrade)
 ```
 
 Parameters:
@@ -91,7 +91,7 @@ Returns:
 Checks whether a player has a certain job, and optionally checks if their grade is bigger or equal to the specified grade.
 
 ```lua
-employment.playerHasJob(playerId, jobName, jobGrade)
+employmentProvider.playerHasJob(playerId, jobName, jobGrade)
 ```
 
 Parameters:

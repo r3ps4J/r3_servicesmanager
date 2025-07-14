@@ -6,12 +6,12 @@ To retrieve the inventory provider, use the load function with `"inventory"` for
 
 Lua:
 ```lua
-local inventory = exports.r3_servicesmanager:load("inventory")
+local inventoryProvider = exports.r3_servicesmanager:load("inventory")
 ```
 
 JavaScript:
 ```js
-const inventory = exports.r3_servicesmanager.load("inventory");
+const inventoryProvider = exports.r3_servicesmanager.load("inventory");
 ```
 
 ### Server
@@ -21,7 +21,7 @@ On the server side, the following methods are available:
 Adds an item to the specified inventory.
 
 ```lua
-inventory.addItem(inventoryRef, itemName, amount)
+inventoryProvider.addItem(inventoryRef, itemName, amount)
 ```
 
 Parameters:
@@ -37,7 +37,7 @@ Returns:
 Returns the count of an item in the specified inventory.
 
 ```lua
-inventory.getItemCount(inventoryRef, itemName)
+inventoryProvider.getItemCount(inventoryRef, itemName)
 ```
 
 Parameters:
