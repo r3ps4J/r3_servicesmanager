@@ -38,7 +38,7 @@ RegisterOnResourceStart("stash", function()
         end,
         hasItem = function(inventoryRef, itemName, amount)
             local inv = getInventory(inventoryRef)
-            return getItemCount(inv, itemName) > amount
+            return getItemCount(inv, itemName) >= amount
         end,
         canAddItem = function(inventoryRef, itemName, amount)
             local inv = getInventory(inventoryRef)

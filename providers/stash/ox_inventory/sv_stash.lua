@@ -27,7 +27,7 @@ RegisterOnResourceStart("stash", function()
         end,
         hasItem = function(inventoryRef, itemName, amount)
             local inv = getInventory(inventoryRef)
-            return exports.ox_inventory:GetItemCount(inv, itemName) > amount
+            return exports.ox_inventory:GetItemCount(inv, itemName) >= amount
         end,
         canAddItem = function(inventoryRef, itemName, amount)
             local inv = getInventory(inventoryRef)
