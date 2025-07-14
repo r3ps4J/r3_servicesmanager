@@ -10,5 +10,4 @@ export interface ServerStashProvider {
     removeItem(inventoryRef: InventoryRef, itemName: string, amount: number): boolean;
     getItemCount(inventoryRef: InventoryRef, itemName: string): number;
     hasItem(inventoryRef: InventoryRef, itemName: string, amount: number): boolean;
-    canAddItem(inventoryRef: InventoryRef, itemName: string, amount: number): boolean;
 }

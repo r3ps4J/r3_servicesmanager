@@ -63,22 +63,6 @@ Returns:
 - `true` if the player has the given item and the amount of the given item is bigger than or equal to the specified amount.
 - `false` if the the player doesn't have the given item or the amount of the given item is less than the specified amount.
 
-#### canCarryItem
-Checks whether a player can carry a specific amount of a certain item.
-
-```lua
-inventoryProvider.canCarryItem(playerId, itemName, amount)
-```
-
-Parameters:
-- playerId: `integer`
-- itemName: `string`
-- amount: `integer`
-
-Returns:
-- `true` if the player can carry the given amount of the specified item.
-- `false` if the player can't carry the given amount of the specified item.
-
 ## Types
 The following types are used within the inventory provider:
 

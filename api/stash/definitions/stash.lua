@@ -9,4 +9,3 @@
 ---@field removeItem fun(inventoryRef: InventoryRef, itemName: string, amount: number): boolean
 ---@field getItemCount fun(inventoryRef: InventoryRef, itemName: string): number
 ---@field hasItem fun(inventoryRef: InventoryRef, itemName: string, amount: number): boolean
----@field canAddItem fun(inventoryRef: InventoryRef, itemName: string, amount: number): boolean

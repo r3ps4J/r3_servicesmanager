@@ -63,22 +63,6 @@ Returns:
 - `true` if the inventory has the given item and the amount of the given item is bigger than or equal to the specified amount.
 - `false` if the the inventory doesn't have the given item or the amount of the given item is less than the specified amount.
 
-#### canAddItem
-Checks whether a specific amount of a certain item can be added to the specified inventory.
-
-```lua
-stashProvider.canAddItem(inventoryRef, itemName, amount)
-```
-
-Parameters:
-- inventoryRef: [`InventoryRef`](#inventoryref)
-- itemName: `string`
-- amount: `integer`
-
-Returns:
-- `true` if the given amount of the specified item can be added to the inventory.
-- `false` if the given amount of the specified item cannot be added to the inventory.
-
 ## Types
 The following types are used within the inventory provider:
 

@@ -3,4 +3,3 @@
 ---@field removeItem fun(playerId: integer, itemName: string, amount: number): boolean
 ---@field getItemCount fun(playerId: integer, itemName: string): number
 ---@field hasItem fun(playerId: integer, itemName: string, amount: number): boolean
----@field canCarryItem fun(playerId: integer, itemName: string, amount: number): boolean

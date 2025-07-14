@@ -9,21 +9,9 @@ RegisterOnResourceStart("stash", function()
         return inventoryRef.id
     end
 
-    ---@param inv integer | string
-    ---@param itemName string
-    local function getItemCount(inv, itemName)
-        local inventory = exports["qb-inventory"]:GetInventory(inv)
-        local count = 0
-        for _, item in pairs(inventory) do
-            if itemName == item.name then
-                count = count + item.amount
-            end
-        end
-        return count
-    end
-
     ---@type ServerStashProvider
-    local inventoryProvider = {
+    local stashProvider
+    stashProvider = {
         addItem = function(inventoryRef, itemName, amount)
             local inv = getInventory(inventoryRef)
             return exports["qb-inventory"]:AddItem(inv, itemName, amount)
@@ -34,17 +22,19 @@ RegisterOnResourceStart("stash", function()
         end,
         getItemCount = function(inventoryRef, itemName)
             local inv = getInventory(inventoryRef)
-            return getItemCount(inv, itemName)
+            local inventory = exports["qb-inventory"]:GetInventory(inv)
+            local count = 0
+            for _, item in pairs(inventory) do
+                if itemName == item.name then
+                    count = count + item.amount
+                end
+            end
+            return count
         end,
         hasItem = function(inventoryRef, itemName, amount)
-            local inv = getInventory(inventoryRef)
-            return getItemCount(inv, itemName) >= amount
-        end,
-        canAddItem = function(inventoryRef, itemName, amount)
-            local inv = getInventory(inventoryRef)
-            return exports["qb-inventory"]:CanAddItem(inv, itemName, amount)
+            return stashProvider.getItemCount(inventoryRef, itemName) >= amount
         end,
     }
 
-    return inventoryProvider
+    return stashProvider
 end, ServicePriority.Low, "qb-inventory")

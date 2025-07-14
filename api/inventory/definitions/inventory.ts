@@ -3,5 +3,4 @@ export interface ServerInventoryProvider {
     removeItem(playerId: number, itemName: string, amount: number): boolean;
     getItemCount(playerId: number, itemName: string): number;
     hasItem(playerId: number, itemName: string, amount: number): boolean;
-    canCarryItem(playerId: number, itemName: string, amount: number): boolean;
 }
