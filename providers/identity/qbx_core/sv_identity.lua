@@ -22,4 +22,4 @@ RegisterOnResourceStart("identity", function()
     }
 
     return identityProvider
-end, ServicePriority.Lowest, "qbx_core")
+end, ServicePriority.Low, "qbx_core")

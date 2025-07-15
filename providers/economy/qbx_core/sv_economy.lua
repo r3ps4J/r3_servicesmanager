@@ -25,4 +25,4 @@ RegisterOnResourceStart("economy", function()
     }
 
     return economyProvider
-end, ServicePriority.Lowest, "qbx_core")
+end, ServicePriority.Low, "qbx_core")

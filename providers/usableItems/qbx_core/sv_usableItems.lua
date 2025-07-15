@@ -7,4 +7,4 @@ RegisterOnResourceStart("usableItems", function()
     }
 
     return usableItemsProvider
-end, ServicePriority.Lowest, "qbx_core")
+end, ServicePriority.Low, "qbx_core")

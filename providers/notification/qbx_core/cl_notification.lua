@@ -16,4 +16,4 @@ RegisterOnResourceStart("notification", function()
     }
 
     return notificationProvider
-end, ServicePriority.Lowest, "qbx_core")
+end, ServicePriority.Low, "qbx_core")

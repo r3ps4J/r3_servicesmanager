@@ -15,4 +15,4 @@ RegisterOnResourceStart("metadata", function()
     }
 
     return metadataProvider
-end, ServicePriority.Lowest, "qbx_core")
+end, ServicePriority.Low, "qbx_core")
