@@ -1,0 +1,5 @@
+---@class ServerBankingProvider
+---@field getAccountBalance fun(account: string): number | nil
+---@field addAccountBalance fun(account: string, amount: number): boolean
+---@field removeAccountBalance fun(account: string, amount: number): boolean
+---@field accountHasBalance fun(account: string, amount: number): boolean
