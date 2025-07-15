@@ -31,10 +31,23 @@ function RegisterOnResourceStart(service, createProvider, priority, resource)
     end
 
     AddEventHandler("onResourceStart", function(resourceName)
-        if resourceName ~= resource then
+        if resourceName == resource then
+            registerProvider()
             return
         end
 
-        registerProvider()
+        -- Check if the resource provides for any other resoruce
+        local numProvides = GetNumResourceMetadata(resourceName, "provide")
+        if numProvides == 0 then
+            return
+        end
+
+        -- Loop through all "provide" entries in the manifest
+        for i = 0, numProvides, 1 do
+            if GetResourceMetadata(resourceName, "provide", i) == resource then
+                registerProvider()
+                return
+            end
+        end
     end)
 end
