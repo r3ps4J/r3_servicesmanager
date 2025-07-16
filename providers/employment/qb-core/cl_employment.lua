@@ -1,7 +1,7 @@
 RegisterOnResourceStart("employment", function()
     local QBCore = exports["qb-core"]:GetCoreObject({ "Functions" })
 
-    local onPlayerJobChanged = EventEmitter()
+    local playerJobChanged = EventEmitter()
 
     local function convertJob(playerJob)
         return {
@@ -37,12 +37,12 @@ RegisterOnResourceStart("employment", function()
             return true
         end,
         onPlayerJobChanged = function(callback)
-            onPlayerJobChanged.subscribe(callback)
+            playerJobChanged.subscribe(callback)
         end,
     }
 
     RegisterNetEvent("QBCore:Client:OnJobUpdate", function(playerJob)
-        onPlayerJobChanged.emit(convertJob(playerJob))
+        playerJobChanged.emit(convertJob(playerJob))
     end)
 
     return employmentProvider

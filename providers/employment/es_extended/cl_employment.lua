@@ -2,7 +2,7 @@ RegisterOnResourceStart("employment", function()
     local ESX = exports["es_extended"]:getSharedObject()
     local bossGradeName = "boss"
 
-    local onPlayerJobChanged = EventEmitter()
+    local playerJobChanged = EventEmitter()
 
     local function convertJob(xPlayerJob)
         return {
@@ -38,12 +38,12 @@ RegisterOnResourceStart("employment", function()
             return true
         end,
         onPlayerJobChanged = function(callback)
-            return onPlayerJobChanged.subscribe(callback)
+            return playerJobChanged.subscribe(callback)
         end,
     }
 
     AddEventHandler("esx:setJob", function(xPlayerJob)
-        onPlayerJobChanged.emit(convertJob(xPlayerJob))
+        playerJobChanged.emit(convertJob(xPlayerJob))
     end)
 
     return employmentProvider

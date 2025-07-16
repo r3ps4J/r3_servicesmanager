@@ -1,5 +1,5 @@
 RegisterOnResourceStart("employment", function()
-    local eventEmitter = EventEmitter()
+    local playerJobChanged = EventEmitter()
 
     local function convertJob(playerJob)
         return {
@@ -35,12 +35,12 @@ RegisterOnResourceStart("employment", function()
             return true
         end,
         onPlayerJobChanged = function(callback)
-            eventEmitter.subscribe(callback)
+            playerJobChanged.subscribe(callback)
         end,
     }
 
     RegisterNetEvent("QBCore:Client:OnJobUpdate", function(playerJob)
-        eventEmitter.emit(convertJob(playerJob))
+        playerJobChanged.emit(convertJob(playerJob))
     end)
 
     return employmentProvider
