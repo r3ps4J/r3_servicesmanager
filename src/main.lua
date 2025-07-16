@@ -14,6 +14,7 @@ AddEventHandler("onResourceStop", servicesManager.unregisterAllForResource)
 
 -- Register global values for use in providers
 ServicePriority = require "ServicePriority"
+EventEmitter = require "EventEmitter"
 
 ---Registers a provider created by a factory function when the specified resource starts.
 ---@param service string
