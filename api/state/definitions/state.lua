@@ -1,0 +1,3 @@
+---@class ClientStateProvider
+---@field isPlayerLoaded fun(): boolean
+---@field onPlayerLoaded fun(callback: fun(): nil): {unsubscribe: fun(): nil}
