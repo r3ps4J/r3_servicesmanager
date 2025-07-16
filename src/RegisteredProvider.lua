@@ -8,7 +8,7 @@ local table_contains = require "utils.table_contains"
 ---@param resource string
 ---@param invokingResource? string
 ---@return RegisteredProvider
-function RegisteredProvider(service, provider, priority, resource, invokingResource)
+local function RegisteredProvider(service, provider, priority, resource, invokingResource)
     assert(service ~= nil, "service cannot be nil")
     assert(provider ~= nil, "provider cannot be nil")
     assert(priority ~= nil, "priority cannot be nil")

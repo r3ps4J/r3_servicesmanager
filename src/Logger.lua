@@ -3,7 +3,7 @@
 ---Constructs a logger for the current class/function
 ---@param className? string
 ---@return Logger
-function Logger(className)
+local function Logger(className)
     ---@class Logger
     ---@field trace fun(...)
     ---@field debug fun(...)
