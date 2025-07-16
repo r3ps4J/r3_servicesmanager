@@ -46,14 +46,14 @@ Returns:
 Can be used to register a callback which will be invoked when the player's job changes.
 
 ```lua
-employmentProvider.onPlayerJobChanged(cb)
+employmentProvider.onPlayerJobChanged(callback)
 ```
 
 Parameters:
-- cb: `fun(playerJob: PlayerJob): nil`
+- callback: `fun(playerJob: PlayerJob): nil`
 
 Returns:
-- `nil`
+- [`Subscription`](#subscription)
 
 ### Server
 On the server side, the following methods are available:
@@ -171,6 +171,12 @@ Fields:
 - label: `string`
 - salary: `integer`
 - isBoss: `boolean`
+
+### Subscription
+A subscription to an event emitter.
+
+Fields:
+- unsubscribe: `fun(): nil`
 
 ## Registration
 To register an employment provider, ensure it implements all methods described above. Check out [`employment.lua`](./definitions/employment.lua) and [`employment.ts`](./definitions/employment.ts) for type definitions.

@@ -20,7 +20,7 @@ export interface JobGrade {
 export interface ClientEmploymentProvider {
     getPlayerJob(): PlayerJob | undefined;
     playerHasJob(jobName: string): boolean;
-    onPlayerJobChanged(cb: (job: PlayerJob) => void): void
+    onPlayerJobChanged(callback: (job: PlayerJob) => void): void
 }
 
 export interface ServerEmploymentProvider {

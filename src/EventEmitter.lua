@@ -4,67 +4,53 @@ local function EventEmitter()
 
     ---@class Listener
     ---@field invokingResource string
-    ---@field cb function
+    ---@field callback function
     ---@field onResourceStop EventHandler | nil
 
-    ---@class ListenerRef
-    ---@field eventName string
-    ---@field index integer
+    ---@class Subscription
+    ---@field unsubscribe fun(): nil
 
-    ---@type table<string, Listener[]>
+    ---@type Listener[]
     local listeners = {}
 
-    ---@param eventName string
-    ---@param cb function
-    ---@return ListenerRef
-    function eventEmitter.addEventListener(eventName, cb)
-        if listeners[eventName] == nil then
-            listeners[eventName] = {}
-        end
-
+    ---@param callback function
+    ---@return Subscription
+    function eventEmitter.subscribe(callback)
         ---@type Listener
         local listener = {
             invokingResource = GetInvokingResource(),
-            cb = cb,
+            callback = callback,
             onResourceStop = nil,
         }
 
-        local index = #listeners[eventName] + 1
-        listeners[eventName][index] = listener
+        local index = #listeners + 1
+        listeners[index] = listener
 
-        local listenerRef = {eventName = eventName, index = index}
+        local unsubscribed = false
+        local function unsubscribe()
+            if unsubscribed then
+                return
+            end
+            RemoveEventHandler(listener.onResourceStop)
+            listeners[index] = nil
+            unsubscribed = true
+        end
 
         listener.onResourceStop = AddEventHandler("onResourceStop", function(resourceName)
             if resourceName ~= listener.invokingResource then
                 return
             end
-            eventEmitter.removeEventListener(listenerRef)
+            unsubscribe()
         end)
 
-        return listenerRef
+        return { unsubscribe = unsubscribe }
     end
 
-    ---@param ref ListenerRef
-    function eventEmitter.removeEventListener(ref)
-        local listener = listeners[ref.eventName]?[ref.index]
-        if listener == nil then
-            return
-        end
-
-        RemoveEventHandler(listener.onResourceStop)
-        listeners[ref.eventName][ref.index] = nil
-    end
-
-    ---@param eventName string
     ---@param value any
-    function eventEmitter.emit(eventName, value)
-        if listeners[eventName] == nil then
-            return
-        end
-
-        for _, listener in pairs(listeners[eventName]) do
+    function eventEmitter.emit(value)
+        for _, listener in pairs(listeners) do
             if listener ~= nil then
-                listener.cb(value)
+                listener.callback(value)
             end
         end
     end
