@@ -20,6 +20,7 @@
 ---@class ClientEmploymentProvider
 ---@field getPlayerJob fun(): PlayerJob | nil
 ---@field playerHasJob fun(jobName: string, jobGrade: integer): boolean
+---@field onPlayerJobChanged fun(cb: fun(playerJob: PlayerJob): nil): nil
 
 ---@class ServerEmploymentProvider
 ---@field getJob fun(jobName: string): Job | nil

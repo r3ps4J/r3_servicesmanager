@@ -42,6 +42,19 @@ Returns:
 - `true` if the player has the job and their grade satisfies the specified grade.
 - `false` if the player does not have the job and grade.
 
+#### onPlayerJobChanged
+Can be used to register a callback which will be invoked when the player's job changes.
+
+```lua
+employmentProvider.onPlayerJobChanged(cb)
+```
+
+Parameters:
+- cb: `fun(playerJob: PlayerJob): nil`
+
+Returns:
+- `nil`
+
 ### Server
 On the server side, the following methods are available:
 
