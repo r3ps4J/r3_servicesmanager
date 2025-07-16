@@ -37,7 +37,7 @@ RegisterOnResourceStart("employment", function()
             return true
         end,
         onPlayerJobChanged = function(callback)
-            playerJobChanged.subscribe(callback)
+            return playerJobChanged.subscribe(callback)
         end,
     }
 
