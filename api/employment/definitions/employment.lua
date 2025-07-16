@@ -17,6 +17,10 @@
 ---@class PlayerJobGradeData : JobGrade
 ---@field rank integer
 
+---@class ClientEmploymentProvider
+---@field getPlayerJob fun(): PlayerJob | nil
+---@field playerHasJob fun(jobName: string, jobGrade: integer): boolean
+
 ---@class ServerEmploymentProvider
 ---@field getJob fun(jobName: string): Job | nil
 ---@field jobExists fun(jobName: string, jobGrade?: integer): boolean

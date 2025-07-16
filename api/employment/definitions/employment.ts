@@ -17,6 +17,11 @@ export interface JobGrade {
     isBoss: boolean;
 }
 
+export interface ClientEmploymentProvider {
+    getPlayerJob(): PlayerJob | undefined;
+    playerHasJob(jobName: string): boolean;
+}
+
 export interface ServerEmploymentProvider {
     getJob(jobName: string): Job | undefined;
     jobExists(jobName: string, jobGrade?: number): boolean;

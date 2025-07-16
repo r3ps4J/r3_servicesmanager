@@ -14,6 +14,34 @@ JavaScript:
 const employmentProvider = exports.r3_servicesmanager.load("employment");
 ```
 
+### Client
+On the client side, the following methods are available:
+
+#### getPlayerJob
+Returns the job of the player.
+
+```lua
+employmentProvider.getPlayerJob()
+```
+
+Returns:
+- [`PlayerJob`](#playerjob)
+
+#### playerHasJob
+Checks whether a player has a certain job, and optionally checks if their grade is bigger or equal to the specified grade.
+
+```lua
+employmentProvider.playerHasJob(jobName, jobGrade)
+```
+
+Parameters:
+- jobName: `string`
+- jobGrade: `integer` (optional)
+
+Returns:
+- `true` if the player has the job and their grade satisfies the specified grade.
+- `false` if the player does not have the job and grade.
+
 ### Server
 On the server side, the following methods are available:
 
