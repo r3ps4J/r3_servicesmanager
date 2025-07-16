@@ -20,7 +20,7 @@
 ---@class ClientEmploymentProvider
 ---@field getPlayerJob fun(): PlayerJob | nil
 ---@field playerHasJob fun(jobName: string, jobGrade: integer): boolean
----@field onPlayerJobChanged fun(callback: fun(playerJob: PlayerJob): nil): nil
+---@field onPlayerJobChanged fun(callback: fun(playerJob: PlayerJob): nil): {unsubscribe: fun(): nil}
 
 ---@class ServerEmploymentProvider
 ---@field getJob fun(jobName: string): Job | nil
