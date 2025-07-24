@@ -48,6 +48,7 @@ RegisterOnResourceStart("progress", function()
         cancelProgress = function()
             -- Since we cannot cancel a progressbar in qbcore
             wasCancelled = true
+            -- stylua: ignore
             TriggerEvent("progressbar:client:cancel")
         end,
     }

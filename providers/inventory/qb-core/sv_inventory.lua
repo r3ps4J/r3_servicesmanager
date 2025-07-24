@@ -35,9 +35,9 @@ RegisterOnResourceStart("inventory", function()
             end
             return count
         end,
-        hasItem = function (playerId, itemName, amount)
+        hasItem = function(playerId, itemName, amount)
             return inventoryProvider.getItemCount(playerId, itemName) >= amount
-        end
+        end,
     }
 
     return inventoryProvider
