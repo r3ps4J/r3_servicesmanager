@@ -41,7 +41,7 @@ Returns:
 - `nil`
 
 ### Loading a service provider
-You can retrieve a service provider using the `load` method:
+You can retrieve a service provider using the `load` export:
 
 ```lua
 local serviceProvider = exports.r3_servicesmanager:load(service)
@@ -57,7 +57,7 @@ Returns:
 - `nil` If there is no provider registered for the service.
 
 ### Retrieving a registration
-If you need more information about a provider, you can retrieve the RegisteredProvider completely using the `getRegistration` method:
+If you need more information about a provider, you can retrieve the RegisteredProvider completely using the `getRegistration` export:
 
 ```lua
 local registeredProvider = exports.r3_servicesmanager:getRegistration(service)
