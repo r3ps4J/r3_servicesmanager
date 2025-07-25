@@ -1,0 +1,28 @@
+name: Release
+on:
+  release:
+    types: [published]
+jobs:
+  bundle:
+    name: Bundle and pack resource
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "npm"
+      - name: Install zip
+        run: sudo apt install zip
+      - name: Install dependencies
+        run: npm ci
+      - name: Create bundle
+        run: npm run bundle
+      - name: Pack resource
+        run: bash scripts/pack.sh
+      - name: Upload zip to release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run:
+          gh release upload ${{github.event.release.tag_name}} r3_servicesmanager.zip
+  
