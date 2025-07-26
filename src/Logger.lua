@@ -82,17 +82,16 @@ local function Logger(className)
             local message = tostring(...)
 
             -- Output to console
-            print(
-                string.format(
-                    "%s[%-6s%s]%s %s: %s",
-                    logger.useColor and x.color or "",
-                    nameUpper,
-                    os.date "%H:%M:%S",
-                    logger.useColor and "\27[0m" or "",
-                    className,
-                    message
-                )
-            )
+            print(string.format(
+                "%s[%-6s%s]%s %s: %s",
+                logger.useColor and x.color or "",
+                nameUpper,
+                -- stylua: ignore
+                os.date "%H:%M:%S",
+                logger.useColor and "\27[0m" or "",
+                className,
+                message
+            ))
         end
     end
 

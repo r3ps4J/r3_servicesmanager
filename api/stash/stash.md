@@ -31,7 +31,23 @@ Parameters:
 
 Returns:
 - `true` if the item was successfully added.
-- `false` if the item wasn't successfully added (i.e. the player could not carry it).
+- `false` if the item wasn't successfully added (i.e. the stash could not hold it).
+
+#### removeItem
+Removes an item from the specified inventory.
+
+```lua
+stashProvider.removeItem(inventoryRef, itemName, amount)
+```
+
+Parameters:
+- inventoryRef: [`InventoryRef`](#inventoryref)
+- itemName: `string`
+- amount: `integer`
+
+Returns:
+- `true` if the item was successfully removed.
+- `false` if the item wasn't successfully removed (i.e. the stash did not have the specified amount).
 
 #### getItemCount
 Returns the count of an item in the specified inventory.

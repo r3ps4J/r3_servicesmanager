@@ -33,6 +33,22 @@ Returns:
 - `true` if the item was successfully added.
 - `false` if the item wasn't successfully added (i.e. the player could not carry it).
 
+#### removeItem
+Removes an item from the specified player's inventory.
+
+```lua
+inventoryProvider.removeItem(playerId, itemName, amount)
+```
+
+Parameters:
+- playerId: `integer`
+- itemName: `string`
+- amount: `integer`
+
+Returns:
+- `true` if the item was successfully removed.
+- `false` if the item wasn't successfully removed (i.e. the player did not have the specified amount).
+
 #### getItemCount
 Returns the count of an item in the specified player's inventory.
 
