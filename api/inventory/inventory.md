@@ -79,16 +79,6 @@ Returns:
 - `true` if the player has the given item and the amount of the given item is bigger than or equal to the specified amount.
 - `false` if the the player doesn't have the given item or the amount of the given item is less than the specified amount.
 
-## Types
-The following types are used within the inventory provider:
-
-### InventoryRef
-An object that acts as a reference for the target inventory.
-
-Fields:
-- type: `"player" | "stash" | "trunk" | "glovebox"`
-- id: `integer` or `string`
-
 ## Registration
 To register an inventory provider, ensure it implements all methods described above. Check out [`inventory.lua`](./definitions/inventory.lua) and [`inventory.ts`](./definitions/inventory.ts) for type definitions.
 
