@@ -19,6 +19,18 @@ The are some providers included with this resource for popular resources such as
 
 You can also define your own "service", and use it across your own resources. Just register it under a non-taken service key, preferably something that will never be taken i.e. including your username, and you can retrieve it in your resources.
 
+## Download
+https://github.com/r3ps4J/r3_servicesmanager/releases/latest/download/r3_servicesmanager.zip
+
+## Installation
+After downloading, add the following to your `server.cfg`:
+
+```
+ensure r3_servicesmanager
+```
+
+Make sure to place this before any scripts that make use of the services manager. It is recommended to start it as one of the first scripts in your startup, as it will register the included providers as soon as their resources start. Ideally, any resource that registers providers within the services manager should start before all the resources that retrieve providers.
+
 ## How to use this?
 Well it's really simple actually. Let me guide you through it.
 
