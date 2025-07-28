@@ -152,3 +152,11 @@ Methods:
 - getPriority(): [`ServicePriority`](#servicepriority) The priority of the provider.
 - getResource(): `string` The resource the provider was registered for.
 - getInvokingResource(): `string` The resource that registered the provider.
+
+## Events
+Events are triggered when a provider gets registered or unregistered. The following events get triggered:
+
+- `r3_servicesmanager:providerRegistered`
+- `r3_servicesmanager:providerUnregistered`
+
+Both events provide the [RegisteredProvider](#registeredprovider) in question as an argument.
