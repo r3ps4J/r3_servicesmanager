@@ -1,5 +1,7 @@
 -- Edited from https://github.com/rxi/log.lua
 
+local isDuplicityVersion = IsDuplicityVersion()
+
 ---Constructs a logger for the current class/function
 ---@param className? string
 ---@return Logger
@@ -31,8 +33,9 @@ local function Logger(className)
         levels[v.name] = i
     end
 
-    logger.useColor = true
+    logger.useColor = isDuplicityVersion
     logger.level = "info"
+    logger.showTimestamp = isDuplicityVersion
 
     local useColor = GetConvar(
         ("r3_servicesmanager:logger:useColor:%s"):format(className),
@@ -82,12 +85,12 @@ local function Logger(className)
             local message = tostring(...)
 
             -- Output to console
+            -- stylua: ignore
             print(string.format(
-                "%s[%-6s%s]%s %s: %s",
+                logger.showTimestamp and "%s[%-6s%s]%s %s: %s" or "%s[%s%s]%s %s: %s",
                 logger.useColor and x.color or "",
                 nameUpper,
-                -- stylua: ignore
-                os.date "%H:%M:%S",
+                logger.showTimestamp and os.date("%H:%M:%S") or "",
                 logger.useColor and "\27[0m" or "",
                 className,
                 message
