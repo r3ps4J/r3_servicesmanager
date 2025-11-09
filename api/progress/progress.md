@@ -43,7 +43,7 @@ Returns:
 - `nil`
 
 ## Types
-The following types are used within the employment provider:
+The following types are used within the progress provider:
 
 ### ProgressOptions
 An object containing the options for a progress bar.
