@@ -1,0 +1,32 @@
+---@class TargetOption
+---@field label string
+---@field name? string
+--- Full font awesome 5 icon including prefix such as "fas fa-"
+---@field icon? string
+---@field distance? number
+---@field bones? string[]
+--- Group: minimum grade map
+---@field groups? table<string, integer>
+---@field canInteract? fun(entity: number, distance: number, coords: vector3, name: string, bone: string): boolean
+---@field onSelect fun(data: TargetResponse)
+
+---@class TargetResponse
+---@field entity integer
+
+---@class ClientTargetProvider
+---@field addGlobalObject fun(options: TargetOption[]): nil
+---@field removeGlobalObject fun(optionNames: string[]): nil
+---@field addGlobalPlayer fun(options: TargetOption[]): nil
+---@field removeGlobalPlayer fun(optionNames: string[]): nil
+---@field addGlobalVehicle fun(options: TargetOption[]): nil
+---@field removeGlobalVehicle fun(optionNames: string[]): nil
+---@field addModel fun(models: integer | string | (integer | string)[], options: TargetOption[]): nil
+---@field removeModel fun(models: integer | string | (integer | string)[], optionNames: string[]): nil
+---@field addEntity fun(netIds: integer | integer[], options: TargetOption[]): nil
+---@field removeEntity fun(netIds: integer | integer[], optionNames: string[]): nil
+---@field addLocalEntity fun(entities: integer | integer[], options: TargetOption[]): nil
+---@field removeLocalEntity fun(entities: integer | integer[], optionNames: string[]): nil
+---@field addSphereZone fun(parameters: { name: string, options: TargetOption[], coords: vector3, radius?: number, debug?: boolean }): string
+---@field addBoxZone fun(parameters: { name: string, options: TargetOption[], coords: vector3, size?: number, debug?: boolean }): string
+---@field addPolyZone fun(parameters: { name: string, options: TargetOption[], points: vector3[], thickness?: number, debug?: boolean }): string
+---@field removeZone fun(name: string): nil
