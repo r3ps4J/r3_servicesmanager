@@ -19,6 +19,7 @@ export interface TargetResponse {
 export type Vector3 = { x: number; y: number; z: number };
 
 export interface ClientTargetProvider {
+    enableTargeting(enabled: boolean): void
     addGlobalObject(options: TargetOption[]): void;
     removeGlobalObject(optionNames: string[]): void;
     addGlobalPlayer(options: TargetOption[]): void;

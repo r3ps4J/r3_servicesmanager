@@ -17,6 +17,19 @@ const targetProvider = exports.r3_servicesmanager.load("target");
 ### Client
 On the client side, the following methods are available:
 
+#### enableTargeting
+Enable or disable targeting.
+
+```lua
+targetProvider.enableTargeting(bool)
+```
+
+Parameters:
+- enabled: `boolean`
+
+Returns:
+- `nil`
+
 #### addGlobalObject
 Adds global options for all objects.
 

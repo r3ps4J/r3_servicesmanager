@@ -15,6 +15,7 @@
 ---@field entity integer
 
 ---@class ClientTargetProvider
+---@field enableTargeting fun(enabled: boolean): nil
 ---@field addGlobalObject fun(options: TargetOption[]): nil
 ---@field removeGlobalObject fun(optionNames: string[]): nil
 ---@field addGlobalPlayer fun(options: TargetOption[]): nil
