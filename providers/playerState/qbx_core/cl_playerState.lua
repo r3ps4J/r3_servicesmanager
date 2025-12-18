@@ -11,8 +11,8 @@ end)
 RegisterOnResourceStart("state", function()
     local playerLoaded = EventEmitter()
 
-    ---@type ClientStateProvider
-    local stateProvider = {
+    ---@type ClientPlayerStateProvider
+    local playerStateProvider = {
         isPlayerLoaded = function()
             return isPlayerLoaded
         end,
@@ -25,5 +25,5 @@ RegisterOnResourceStart("state", function()
         playerLoaded.emit()
     end)
 
-    return stateProvider
+    return playerStateProvider
 end, ServicePriority.Low, "qbx_core")

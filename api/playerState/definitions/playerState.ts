@@ -1,4 +1,4 @@
-export interface ClientStateProvider {
+export interface ClientPlayerStateProvider {
     isPlayerLoaded(): boolean;
     onPlayerLoaded(callback: () => void): { unsubscribe: () => void };
 }

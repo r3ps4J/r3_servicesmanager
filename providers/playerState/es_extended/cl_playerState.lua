@@ -3,8 +3,8 @@ RegisterOnResourceStart("employment", function()
 
     local playerLoaded = EventEmitter()
 
-    ---@type ClientStateProvider
-    local stateProvider = {
+    ---@type ClientPlayerStateProvider
+    local playerStateProvider = {
         isPlayerLoaded = ESX.IsPlayerLoaded,
         onPlayerLoaded = function(callback)
             return playerLoaded.subscribe(callback)
@@ -15,5 +15,5 @@ RegisterOnResourceStart("employment", function()
         playerLoaded.emit()
     end)
 
-    return stateProvider
+    return playerStateProvider
 end, ServicePriority.Lowest, "es_extended")
