@@ -8,7 +8,7 @@
 ---@field bones? string[]
 --- Group: minimum grade map
 ---@field groups? table<string, integer>
----@field canInteract? fun(entity: number, distance: number, coords: vector3, name: string, bone: string): boolean
+---@field canInteract? fun(entity: number, distance: number): boolean
 ---@field onSelect fun(data: TargetResponse)
 
 ---@class TargetResponse

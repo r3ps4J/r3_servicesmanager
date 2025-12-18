@@ -259,7 +259,7 @@ Fields:
 - distance: `number` (optional)
 - bones: `string[]` (optional)
 - groups: `table<string, integer>` (optional, group: minimum grade map)
-- canInteract: `fun(entity: number, distance: number, coords: vector3, name: string, bone: string): boolean` (optional)
+- canInteract: `fun(entity: number, distance: number): boolean` (optional)
 - onSelect: `fun(data: TargetResponse): nil`
 
 ### TargetResponse

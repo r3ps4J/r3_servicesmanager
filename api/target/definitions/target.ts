@@ -8,7 +8,7 @@ export interface TargetOption {
     bones?: string[];
     /** Group: minimum grade map */
     groups?: Record<string, number>;
-    canInteract?: (entity: number, distance: number, coords: Vector3, name: string, bone: string) => boolean;
+    canInteract?: (entity: number, distance: number) => boolean;
     onSelect: (data: TargetResponse) => void;
 }
 
