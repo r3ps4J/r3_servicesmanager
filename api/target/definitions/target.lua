@@ -1,5 +1,6 @@
 ---@class TargetOption
 ---@field label string
+--- Used to remove an option
 ---@field name? string
 --- Full font awesome 5 icon including prefix such as "fas fa-"
 ---@field icon? string

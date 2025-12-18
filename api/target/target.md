@@ -254,7 +254,7 @@ An object containing the options for a single target option.
 
 Fields:
 - label: `string`
-- name: `string` (optional)
+- name: `string` (optional, used to remove an option)
 - icon: `string` (optional, full font awesome 5 icon including prefix such as "fas fa-")
 - distance: `number` (optional)
 - bones: `string[]` (optional)

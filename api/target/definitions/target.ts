@@ -1,5 +1,6 @@
 export interface TargetOption {
     label: string;
+    /** Used to remove an option */
     name?: string;
     /** Full font awesome 5 icon including prefix such as "fas fa-" */
     icon?: string;
