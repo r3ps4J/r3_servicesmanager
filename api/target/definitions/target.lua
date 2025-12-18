@@ -29,6 +29,6 @@
 ---@field addLocalEntity fun(entities: integer | integer[], options: TargetOption[]): nil
 ---@field removeLocalEntity fun(entities: integer | integer[], optionNames: string[]): nil
 ---@field addSphereZone fun(parameters: { name: string, options: TargetOption[], coords: vector3, radius?: number, debug?: boolean }): string
----@field addBoxZone fun(parameters: { name: string, options: TargetOption[], coords: vector3, size?: number, debug?: boolean }): string
+---@field addBoxZone fun(parameters: { name: string, options: TargetOption[], coords: vector3, size?: vector3, debug?: boolean }): string
 ---@field addPolyZone fun(parameters: { name: string, options: TargetOption[], points: vector3[], thickness?: number, debug?: boolean }): string
 ---@field removeZone fun(name: string): nil
