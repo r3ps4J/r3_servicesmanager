@@ -1,8 +1,8 @@
 RegisterOnResourceStart("menu", function()
     local ESX = exports["es_extended"]:getSharedObject()
 
-    ---@type ClientMenuProvider
-    local menuProvider = {
+    ---@type ClientContextMenuProvider
+    local contextMenuProvider = {
         openMenu = function(options)
             local elements = {
                 {
@@ -29,5 +29,5 @@ RegisterOnResourceStart("menu", function()
         closeMenu = ESX.CloseContext,
     }
 
-    return menuProvider
+    return contextMenuProvider
 end, ServicePriority.Lowest, "es_extended")

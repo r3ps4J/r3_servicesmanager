@@ -1,6 +1,6 @@
 RegisterOnResourceStart("menu", function()
-    ---@type ClientMenuProvider
-    local menuProvider = {
+    ---@type ClientContextMenuProvider
+    local contextMenuProvider = {
         openMenu = function(options)
             local elements = {
                 {
@@ -29,5 +29,5 @@ RegisterOnResourceStart("menu", function()
         end,
     }
 
-    return menuProvider
+    return contextMenuProvider
 end, ServicePriority.Lowest, "qb-menu")

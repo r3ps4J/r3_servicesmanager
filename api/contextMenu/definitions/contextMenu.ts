@@ -13,7 +13,7 @@ export interface MenuOptions {
     elements: MenuElement[];
 }
 
-export interface ClientMenuProvider {
+export interface ClientContextMenuProvider {
     openMenu(options: MenuOptions): void;
     closeMenu(): void;
 }

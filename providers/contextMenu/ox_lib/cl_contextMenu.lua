@@ -1,6 +1,6 @@
 RegisterOnResourceStart("menu", function()
-    ---@type ClientMenuProvider
-    local menuProvider = {
+    ---@type ClientContextMenuProvider
+    local contextMenuProvider = {
         openMenu = function(options)
             local elements = {}
             for i, menuElement in ipairs(options.elements) do
@@ -25,5 +25,5 @@ RegisterOnResourceStart("menu", function()
         end,
     }
 
-    return menuProvider
+    return contextMenuProvider
 end, ServicePriority.Low, "ox_lib")

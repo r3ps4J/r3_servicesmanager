@@ -11,6 +11,6 @@
 ---@field title string
 ---@field elements MenuElement[]
 
----@class ClientMenuProvider
+---@class ClientContextMenuProvider
 ---@field openMenu fun(options: MenuOptions): nil
 ---@field closeMenu fun(): nil
