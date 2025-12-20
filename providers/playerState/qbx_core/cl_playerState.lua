@@ -8,7 +8,7 @@ RegisterNetEvent("qbx_core:client:playerLoggedOut", function()
     isPlayerLoaded = false
 end)
 
-RegisterOnResourceStart("state", function()
+RegisterOnResourceStart("playerState", function()
     local playerLoaded = EventEmitter()
 
     ---@type ClientPlayerStateProvider

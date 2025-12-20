@@ -1,4 +1,4 @@
-RegisterOnResourceStart("employment", function()
+RegisterOnResourceStart("playerState", function()
     local ESX = exports["es_extended"]:getSharedObject()
 
     local playerLoaded = EventEmitter()

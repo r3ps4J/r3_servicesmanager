@@ -8,7 +8,7 @@ RegisterNetEvent("QBCore:Client:OnPlayerUnloaded", function()
     isPlayerLoaded = false
 end)
 
-RegisterOnResourceStart("state", function()
+RegisterOnResourceStart("playerState", function()
     local playerLoaded = EventEmitter()
 
     ---@type ClientPlayerStateProvider
