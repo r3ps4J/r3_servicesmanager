@@ -28,7 +28,7 @@ Some features of the services manager:
 ## What is supported?
 Pretty much anything can register itself under a service key, but to keep things clear I've defined some interfaces for common services (notifications, jobs, frameworks, etc.). These can all be found in the [`api`](./api/) folder of this repository. Type definitions in Lua and TypeScript can be found there as well. If you need an API for a service that is not defined, make an issue! I'll check if I can define it if it's commonly used.
 
-There are some providers included with this resource for popular resources such as ESX, QBOX and ox_lib. These can be found in the [`providers`](./providers/) folder of this repository. If you need any other providers you are welcome to create an issue, but before you do please ask the creator of the script if they can add support themselves as this makes it a lot easier for everyone.
+There are some providers included with this resource for popular resources such as ESX, QBOX and ox_lib. These can be found in the [`providers`](./providers/) folder of this repository. If you need any other providers you are welcome to create an issue as well.
 
 You can also define your own "service", and use it across your own resources. Just register it under a non-taken service key, preferably something that will never be taken i.e. including your username, and you can retrieve it in your resources.
 
