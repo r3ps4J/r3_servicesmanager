@@ -8,7 +8,7 @@ RegisterOnResourceStart("callback", function()
             local p = promise.new()
             QBCore.Functions.TriggerCallback(name, function(result)
                 p:resolve(result)
-            end, table.unpack(...))
+            end, ... and table.unpack(...))
             return Citizen.Await(p)
         end,
     }

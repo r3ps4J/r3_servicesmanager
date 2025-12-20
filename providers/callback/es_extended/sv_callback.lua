@@ -3,7 +3,12 @@ RegisterOnResourceStart("callback", function()
 
     ---@type ServerCallbackProvider
     local callbackProvider = {
-        registerServerCallback = ESX.RegisterServerCallback,
+        registerServerCallback = function(name, cb)
+            ESX.RegisterServerCallback(name, function(src, esxCb, ...)
+                local result = cb(src, ... and table.unpack(...))
+                esxCb(result)
+            end)
+        end,
     }
 
     return callbackProvider

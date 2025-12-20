@@ -3,7 +3,12 @@ RegisterOnResourceStart("callback", function()
 
     ---@type ServerCallbackProvider
     local callbackProvider = {
-        registerServerCallback = QBCore.Functions.CreateCallback,
+        registerServerCallback = function(name, cb)
+            QBCore.Functions.CreateCallback(name, function(source, qbCb, ...)
+                local result = cb(source, ... and table.unpack(...))
+                qbCb(result)
+            end)
+        end,
     }
 
     return callbackProvider
