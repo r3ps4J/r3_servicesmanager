@@ -1,4 +1,4 @@
-export interface MenuElement {
+export interface ContextMenuElement {
     title: string;
     description?: string;
     /** Full font awesome 5 icon including prefix such as "fas fa-" */
@@ -7,13 +7,13 @@ export interface MenuElement {
     onSelect?: () => void;
 }
 
-export interface MenuOptions {
+export interface ContextMenuOptions {
     id: string;
     title: string;
-    elements: MenuElement[];
+    elements: ContextMenuElement[];
 }
 
 export interface ClientContextMenuProvider {
-    openMenu(options: MenuOptions): void;
+    openMenu(options: ContextMenuOptions): void;
     closeMenu(): void;
 }

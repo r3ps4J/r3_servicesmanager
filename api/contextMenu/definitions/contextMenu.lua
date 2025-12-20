@@ -1,4 +1,4 @@
----@class MenuElement
+---@class ContextMenuElement
 ---@field title string
 ---@field description? string
 --- Full font awesome 5 icon including prefix such as "fas fa-"
@@ -6,11 +6,11 @@
 ---@field disabled? boolean
 ---@field onSelect? fun(): nil
 
----@class MenuOptions
+---@class ContextMenuOptions
 ---@field id string
 ---@field title string
----@field elements MenuElement[]
+---@field elements ContextMenuElement[]
 
 ---@class ClientContextMenuProvider
----@field openMenu fun(options: MenuOptions): nil
+---@field openMenu fun(options: ContextMenuOptions): nil
 ---@field closeMenu fun(): nil

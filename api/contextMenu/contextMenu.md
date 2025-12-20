@@ -21,11 +21,11 @@ On the client side, the following methods are available:
 Opens a context menu for the player.
 
 ```lua
-contextMenuProvider.openMenu(menuOptions)
+contextMenuProvider.openMenu(contextMenuOptions)
 ```
 
 Parameters:
-- menuOptions: [`MenuOptions`](#menuoptions)
+- contextMenuOptions: [`ContextMenuOptions`](#contextmenuoptions)
 
 Returns:
 - `nil`
@@ -43,15 +43,15 @@ Returns:
 ## Types
 The following types are used within the context menu provider:
 
-### MenuOptions
+### ContextMenuOptions
 An object containing the options for a context menu.
 
 Fields:
 - id: `string`
 - title: `string`
-- elements: [`MenuElement[]`](#menuelement)
+- elements: [`ContextMenuElement[]`](#contextmenuelement)
 
-### MenuElement
+### ContextMenuElement
 An object containing the options for a single context menu element.
 
 Fields:
