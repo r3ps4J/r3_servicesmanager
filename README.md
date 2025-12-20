@@ -1,5 +1,18 @@
 # r3_servicesmanager
-This is a services manager for CitizenFX platform. It keeps track of various providers, all registered for a specific service. Scripts can retrieve a registered provider, which implement a specific interface, and use the provider without knowing anything about the implementation of the provider itself. It is heavily inspired by the popular Minecraft plugin Vault.
+![](https://img.shields.io/github/downloads/r3ps4J/r3_servicesmanager/total?logo=github)
+![](https://img.shields.io/github/downloads/r3ps4J/r3_servicesmanager/latest/total?logo=github)
+![](https://img.shields.io/github/contributors/r3ps4J/r3_servicesmanager?logo=github)
+![](https://img.shields.io/github/v/release/r3ps4J/r3_servicesmanager?logo=github) 
+
+A services manager for the CitizenFX platform. It keeps track of various providers, all registered for a specific service. Scripts can retrieve a registered provider, which implement a specific interface, and use it without knowing anything about the implementation of the provider itself. It is inspired by the popular Minecraft server plugin Vault.
+
+## 📚 Documentation
+
+https://r3ps4j.github.io/r3_servicesmanager
+
+## 💾 Download
+
+https://github.com/r3ps4J/r3_servicesmanager/releases/latest/download/r3_servicesmanager.zip
 
 ## Why r3_servicesmanager?
 If you've ever wanted to make a resource for FiveM and published it, you probably got the question to support \<insert any framework here\>. And if you've ever made a server and installed a lot of resources on it, you probably ran into "bridge"-like resources which handled the compatibility with frameworks.
@@ -13,20 +26,17 @@ Some features of the services manager:
 - Server owners can choose what to use! Since the providers are returned based on a priority, you can increase the priority of your preferred \<framework, progressbar, etc.\> and it will be used in every script utilising this. And you can also swap out resources (as long as they are compatible with this), for example if you want to switch the style of notifications in your server you can remove the old notification script and put in a new one which will then be used instead.
 
 ## What is supported?
-Pretty much anything can register itself under a service key, but to keep things clear I've defined some interfaces for common services (notifications, jobs, frameworks, etc.). These can all be found in the [`api`](./api/) folder of this repository. If you need an API for a service that is not defined, make an issue! I'll check if I can define it if it's commonly used.
+Pretty much anything can register itself under a service key, but to keep things clear I've defined some interfaces for common services (notifications, jobs, frameworks, etc.). These can all be found in the [`api`](./api/) folder of this repository. Type definitions in Lua and TypeScript can be found there as well. If you need an API for a service that is not defined, make an issue! I'll check if I can define it if it's commonly used.
 
-The are some providers included with this resource for popular resources such as ESX, QBOX and ox_lib. These can be found in the [`providers`](./providers/) folder of this repository. If you need any other providers you are welcome to create an issue, but before you do please ask the creator of the script if they can add support themselves as this makes it a lot easier for everyone.
+There are some providers included with this resource for popular resources such as ESX, QBOX and ox_lib. These can be found in the [`providers`](./providers/) folder of this repository. If you need any other providers you are welcome to create an issue, but before you do please ask the creator of the script if they can add support themselves as this makes it a lot easier for everyone.
 
 You can also define your own "service", and use it across your own resources. Just register it under a non-taken service key, preferably something that will never be taken i.e. including your username, and you can retrieve it in your resources.
 
-## Download
-https://github.com/r3ps4J/r3_servicesmanager/releases/latest/download/r3_servicesmanager.zip
-
 ## Installation
-After downloading, add the following to your `server.cfg`:
+After downloading, add the `r3_servicesmanager` folder from the zip file to the resources folder of your server. Then add the following to your `server.cfg`:
 
-```
-ensure r3_servicesmanager
+```cfg
+start r3_servicesmanager
 ```
 
 Make sure to place this before any scripts that make use of the services manager. It is recommended to start it as one of the first scripts in your startup, as it will register the included providers as soon as their resources start. Ideally, any resource that registers providers within the services manager should start before all the resources that retrieve providers.
@@ -130,6 +140,14 @@ exports.r3_servicesmanager:isProvidedFor(service)
 Parameters:
 - service: `string` The service to check if there is a provider registered for it.
 
+## Events
+Events are triggered when a provider gets registered or unregistered. The following events get triggered:
+
+- `r3_servicesmanager:providerRegistered`
+- `r3_servicesmanager:providerUnregistered`
+
+Both events provide the [RegisteredProvider](#registeredprovider) in question as an argument.
+
 ## Types
 The following types are used with the provided exports:
 
@@ -152,11 +170,3 @@ Methods:
 - getPriority(): [`ServicePriority`](#servicepriority) The priority of the provider.
 - getResource(): `string` The resource the provider was registered for.
 - getInvokingResource(): `string` The resource that registered the provider.
-
-## Events
-Events are triggered when a provider gets registered or unregistered. The following events get triggered:
-
-- `r3_servicesmanager:providerRegistered`
-- `r3_servicesmanager:providerUnregistered`
-
-Both events provide the [RegisteredProvider](#registeredprovider) in question as an argument.
