@@ -36,7 +36,7 @@ Returns:
 Sets the metadata of a player with a specified key.
 
 ```lua
-playerDataProvider.setPlayerMetadata(playerId, key, value)
+metadataProvider.setPlayerMetadata(playerId, key, value)
 ```
 
 Parameters:
