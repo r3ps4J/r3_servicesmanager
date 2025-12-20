@@ -1,4 +1,4 @@
-RegisterOnResourceStart("menu", function()
+RegisterOnResourceStart("contextMenu", function()
     local ESX = exports["es_extended"]:getSharedObject()
 
     ---@type ClientContextMenuProvider

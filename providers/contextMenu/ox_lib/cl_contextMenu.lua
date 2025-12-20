@@ -1,4 +1,4 @@
-RegisterOnResourceStart("menu", function()
+RegisterOnResourceStart("contextMenu", function()
     ---@type ClientContextMenuProvider
     local contextMenuProvider = {
         openMenu = function(options)
