@@ -19,7 +19,7 @@ export interface JobGrade {
 
 export interface ClientEmploymentProvider {
     getPlayerJob(): PlayerJob | undefined;
-    playerHasJob(jobName: string): boolean;
+    playerHasJob(jobName: string, jobGrade?: number): boolean;
     onPlayerJobChanged(callback: (job: PlayerJob) => void): { unsubscribe: () => void };
 }
 
@@ -29,5 +29,5 @@ export interface ServerEmploymentProvider {
     getOnlineJobCount(jobName: string): number;
     getPlayerJob(playerId: number): PlayerJob | undefined;
     setPlayerJob(playerId: number, jobName: string, jobGrade: number): boolean;
-    playerHasJob(playerId: number, jobName: string): boolean;
+    playerHasJob(playerId: number, jobName: string, jobGrade?: number): boolean;
 }
