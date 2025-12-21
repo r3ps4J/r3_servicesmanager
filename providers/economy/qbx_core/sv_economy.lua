@@ -8,19 +8,39 @@ RegisterOnResourceStart("economy", function()
     ---@type ServerEconomyProvider
     local economyProvider = {
         getPlayerBalance = function(playerId, account)
-            return exports.qbx_core:GetMoney(playerId, accounts[account])
+            local player = exports.qbx_core:GetPlayer(playerId)
+            if player == nil then
+                return nil
+            end
+            return player.Functions.GetMoney(accounts[account])
         end,
         setPlayerBalance = function(playerId, account, amount)
-            return exports.qbx_core:SetMoney(playerId, accounts[account], amount)
+            local player = exports.qbx_core:GetPlayer(playerId)
+            if player == nil then
+                return false
+            end
+            return player.Functions.SetMoney(accounts[account], amount)
         end,
         addPlayerBalance = function(playerId, account, amount)
-            return exports.qbx_core:AddMoney(playerId, accounts[account], amount)
+            local player = exports.qbx_core:GetPlayer(playerId)
+            if player == nil then
+                return false
+            end
+            return player.Functions.AddMoney(accounts[account], amount)
         end,
         removePlayerBalance = function(playerId, account, amount)
-            return exports.qbx_core:RemoveMoney(playerId, accounts[account], amount)
+            local player = exports.qbx_core:GetPlayer(playerId)
+            if player == nil then
+                return false
+            end
+            return player.Functions.RemoveMoney(accounts[account], amount)
         end,
         playerHasBalance = function(playerId, account, amount)
-            return exports.qbx_core:GetMoney(playerId, accounts[account]) >= amount
+            local player = exports.qbx_core:GetPlayer(playerId)
+            if player == nil then
+                return false
+            end
+            return player.Functions.GetMoney(accounts[account]) >= amount
         end,
     }
 
