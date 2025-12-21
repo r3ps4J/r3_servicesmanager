@@ -6,9 +6,9 @@ export interface NotificationOptions {
 }
 
 export interface ClientNotificationProvider {
-    showNotification(message: string, options: NotificationOptions): void;
+    showNotification(message: string, options?: NotificationOptions): void;
 }
 
 export interface ServerNotificationProvider {
-    showNotification(playerId: number, message: string, options: NotificationOptions): void;
+    showNotification(playerId: number, message: string, options?: NotificationOptions): void;
 }
