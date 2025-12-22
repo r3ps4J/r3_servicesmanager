@@ -33,7 +33,7 @@ There are some providers included with this resource for popular resources such 
 You can also define your own "service", and use it across your own resources. Just register it under a non-taken service key, preferably something that will never be taken i.e. including your username, and you can retrieve it in your resources.
 
 ## Installation
-After downloading, add the `r3_servicesmanager` folder from the zip file to the resources folder of your server. Then add the following to your `server.cfg`:
+After downloading, add the `r3_servicesmanager` folder from the zip file to the resources folder of your server. Then add the following to your `server.cfg` below your framework's core resource (es_extended, qbx_core, etc.):
 
 ```cfg
 start r3_servicesmanager
