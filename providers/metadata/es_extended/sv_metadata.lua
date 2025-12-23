@@ -9,7 +9,7 @@ RegisterOnResourceStart("metadata", function()
                 return nil
             end
 
-            return xPlayer.get(key)
+            return xPlayer.getMeta(key)
         end,
         setPlayerMetadata = function(playerId, key, value)
             local xPlayer = ESX.GetPlayerFromId(playerId)
@@ -17,7 +17,7 @@ RegisterOnResourceStart("metadata", function()
                 return false
             end
 
-            return xPlayer.set(key, value)
+            return xPlayer.setMeta(key, value)
         end,
     }
 
