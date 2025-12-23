@@ -17,7 +17,8 @@ RegisterOnResourceStart("metadata", function()
                 return false
             end
 
-            return Player.Functions.SetMetaData(key, value)
+            Player.Functions.SetMetaData(key, value)
+            return true
         end,
     }
 

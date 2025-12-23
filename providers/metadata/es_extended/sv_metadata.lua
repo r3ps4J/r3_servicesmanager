@@ -17,7 +17,8 @@ RegisterOnResourceStart("metadata", function()
                 return false
             end
 
-            return xPlayer.setMeta(key, value)
+            xPlayer.setMeta(key, value)
+            return true
         end,
     }
 

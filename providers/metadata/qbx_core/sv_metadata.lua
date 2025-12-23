@@ -10,7 +10,8 @@ RegisterOnResourceStart("metadata", function()
                 return false
             end
 
-            return exports.qbx_core:SetMetadata(playerId, key, value)
+            exports.qbx_core:SetMetadata(playerId, key, value)
+            return true
         end,
     }
 
