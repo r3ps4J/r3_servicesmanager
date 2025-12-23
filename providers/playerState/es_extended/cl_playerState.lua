@@ -11,7 +11,7 @@ RegisterOnResourceStart("playerState", function()
         end,
     }
 
-    AddEventHandler("esx:playerLoaded", function()
+    RegisterNetEvent("esx:playerLoaded", function()
         playerLoaded.emit()
     end)
 
