@@ -15,6 +15,6 @@ export interface ProgressOptions {
 }
 
 export interface ClientProgressProvider {
-    startProgress(label: string, duration: number, options: ProgressOptions): void;
+    startProgress(label: string, duration: number, options?: ProgressOptions): void;
     cancelProgress(): void;
 }

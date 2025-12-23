@@ -5,18 +5,18 @@ RegisterOnResourceStart("progress", function()
     local progressProvider = {
         startProgress = function(label, duration, options)
             local esxOptions = {
-                FreezePlayer = options.disable?.movement or false,
-                onFinish = options.onFinish,
-                onCancel = options.onCancel,
+                FreezePlayer = options?.disable?.movement or false,
+                onFinish = options?.onFinish,
+                onCancel = options?.onCancel,
             }
 
-            if options.animation then
+            if options?.animation then
                 esxOptions.animation = {
                     type = "anim",
                     dict = options.animation.dict,
                     lib = options.animation.clip,
                 }
-            elseif options.scenario then
+            elseif options?.scenario then
                 esxOptions.animation = {
                     type = "Scenario",
                     Scenario = options.scenario,

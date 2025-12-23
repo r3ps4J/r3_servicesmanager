@@ -6,5 +6,5 @@
 ---@field onCancel? fun(): nil
 
 ---@class ClientProgressProvider
----@field startProgress fun(label: string, duration: integer, options: ProgressOptions): nil
+---@field startProgress fun(label: string, duration: integer, options?: ProgressOptions): nil
 ---@field cancelProgress fun(): nil

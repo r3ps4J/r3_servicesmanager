@@ -8,12 +8,12 @@ RegisterOnResourceStart("progress", function()
             wasCancelled = false
             local animation = {}
 
-            if options.animation then
+            if options?.animation then
                 animation = {
                     animDict = options.animation.dict,
                     anim = options.animation.clip,
                 }
-            elseif options.scenario then
+            elseif options?.scenario then
                 animation = {
                     task = options.scenario,
                 }
@@ -26,10 +26,10 @@ RegisterOnResourceStart("progress", function()
                 false, -- useWhileDead
                 true, -- canCancel
                 {
-                    disableMovement = options.disable.movement,
-                    disableCarMovement = options.disable.vehicleMovement,
-                    disableMouse = options.disable.mouse,
-                    disableCombat = options.disable.combat,
+                    disableMovement = options?.disable.movement,
+                    disableCarMovement = options?.disable.vehicleMovement,
+                    disableMouse = options?.disable.mouse,
+                    disableCombat = options?.disable.combat,
                 },
                 animation,
                 {}, -- prop
@@ -37,12 +37,12 @@ RegisterOnResourceStart("progress", function()
                 function()
                     -- Since we cannot cancel a progressbar in qbcore
                     if wasCancelled then
-                        options.onCancel()
+                        options?.onCancel()
                         return
                     end
-                    options.onFinish()
+                    options?.onFinish()
                 end,
-                options.onCancel
+                options?.onCancel
             )
         end,
         cancelProgress = function()

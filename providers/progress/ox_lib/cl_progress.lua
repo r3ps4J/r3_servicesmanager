@@ -8,18 +8,18 @@ RegisterOnResourceStart("progress", function()
                 canCancel = true,
             }
 
-            if options.animation then
+            if options?.animation then
                 data.anim = {
                     dict = options.animation.dict,
                     lib = options.animation.clip,
                 }
-            elseif options.scenario then
+            elseif options?.scenario then
                 data.anim = {
                     scenario = options.scenario,
                 }
             end
 
-            if options.disable then
+            if options?.disable then
                 data.disable = {
                     move = options.disable.movement,
                     car = options.disable.vehicleMovement,
@@ -29,9 +29,9 @@ RegisterOnResourceStart("progress", function()
             end
 
             if exports.ox_lib:progressBar(data) then
-                options.onFinish()
+                options?.onFinish()
             else
-                options.onCancel()
+                options?.onCancel()
             end
         end,
         cancelProgress = function()
