@@ -42,7 +42,7 @@ RegisterOnResourceStart("employment", function()
         end,
     }
 
-    AddEventHandler("esx:setJob", function(xPlayerJob)
+    RegisterNetEvent("esx:setJob", function(xPlayerJob)
         playerJobChanged.emit(convertJob(xPlayerJob))
     end)
 
