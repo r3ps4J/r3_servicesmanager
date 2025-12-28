@@ -11,7 +11,7 @@ RegisterOnResourceStart("progress", function()
             if options?.animation then
                 data.anim = {
                     dict = options.animation.dict,
-                    lib = options.animation.clip,
+                    clip = options.animation.clip,
                 }
             elseif options?.scenario then
                 data.anim = {
