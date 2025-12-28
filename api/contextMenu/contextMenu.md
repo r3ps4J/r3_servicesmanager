@@ -50,7 +50,7 @@ Fields:
 - id: `string`
 - title: `string`
 - elements: [`ContextMenuElement[]`](#contextmenuelement)
-- onClose: `fun(): nil` (optional, gets called when the menu is closed by the user or using [`closeMenu`](#closemenu), can be called when an element was selected but this is provider dependent and not always the case)
+- onClose: `fun(): nil` (optional, gets called when the menu is closed by the user or using [`closeMenu`](#closemenu) as well as when an element is selected)
 
 ### ContextMenuElement
 An object containing the options for a single context menu element.
