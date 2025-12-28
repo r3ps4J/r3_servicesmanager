@@ -52,3 +52,8 @@ function RegisterOnResourceStart(service, createProvider, priority, resource)
         end
     end)
 end
+
+if IsDuplicityVersion() then
+    local versionCheck = require "utils.versionCheck"
+    Citizen.SetTimeout(1000, versionCheck)
+end
