@@ -17,11 +17,12 @@ RegisterOnResourceStart("contextMenu", function()
                 id = options.id,
                 title = options.title,
                 options = elements,
+                onExit = options.onClose,
             })
             exports.ox_lib:showContext(options.id)
         end,
         closeMenu = function()
-            exports.ox_lib:hideContext()
+            exports.ox_lib:hideContext(true)
         end,
     }
 

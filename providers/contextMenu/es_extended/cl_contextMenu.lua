@@ -24,7 +24,7 @@ RegisterOnResourceStart("contextMenu", function()
                 if element.onSelect then
                     element.onSelect()
                 end
-            end)
+            end, options.onClose)
         end,
         closeMenu = ESX.CloseContext,
     }

@@ -2,6 +2,16 @@ RegisterOnResourceStart("contextMenu", function()
     ---@type ClientContextMenuProvider
     local contextMenuProvider = {
         openMenu = function(options)
+            ---@type EventHandler
+            local closeEventHandler
+            local function onClose()
+                RemoveEventHandler(closeEventHandler)
+                if options.onClose then
+                    options.onClose()
+                end
+            end
+            closeEventHandler = AddEventHandler("qb-menu:client:menuClosed", onClose)
+
             local elements = {
                 {
                     header = options.title,
@@ -26,6 +36,8 @@ RegisterOnResourceStart("contextMenu", function()
         end,
         closeMenu = function()
             exports["qb-menu"]:closeMenu()
+            -- qb-menu doesn't trigger their close event when we force close so we have to do it ourselves
+            TriggerEvent("qb-menu:client:menuClosed")
         end,
     }
 
