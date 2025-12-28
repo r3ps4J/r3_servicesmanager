@@ -9,7 +9,10 @@ RegisterOnResourceStart("contextMenu", function()
                     description = menuElement.description,
                     icon = menuElement.icon,
                     disabled = menuElement.disabled,
-                    onSelect = menuElement.onSelect,
+                    onSelect = menuElement.onSelect and function()
+                       menuElement.onSelect()
+                       options.onClose()
+                    end,
                 }
             end
 
