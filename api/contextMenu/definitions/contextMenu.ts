@@ -11,6 +11,7 @@ export interface ContextMenuOptions {
     id: string;
     title: string;
     elements: ContextMenuElement[];
+    onClose?: () => void;
 }
 
 export interface ClientContextMenuProvider {

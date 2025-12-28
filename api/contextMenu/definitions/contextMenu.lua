@@ -10,6 +10,7 @@
 ---@field id string
 ---@field title string
 ---@field elements ContextMenuElement[]
+---@field onClose? fun(): nil
 
 ---@class ClientContextMenuProvider
 ---@field openMenu fun(options: ContextMenuOptions): nil

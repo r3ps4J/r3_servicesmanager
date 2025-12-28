@@ -50,6 +50,7 @@ Fields:
 - id: `string`
 - title: `string`
 - elements: [`ContextMenuElement[]`](#contextmenuelement)
+- onClose: `fun(): nil` (optional)
 
 ### ContextMenuElement
 An object containing the options for a single context menu element.
