@@ -37,6 +37,7 @@ RegisterOnResourceStart("contextMenu", function()
         closeMenu = function()
             exports["qb-menu"]:closeMenu()
             -- qb-menu doesn't trigger their close event when we force close so we have to do it ourselves
+            -- stylua: ignore
             TriggerEvent("qb-menu:client:menuClosed")
         end,
     }
