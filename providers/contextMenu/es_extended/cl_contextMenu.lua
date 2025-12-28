@@ -2,7 +2,8 @@ RegisterOnResourceStart("contextMenu", function()
     local ESX = exports["es_extended"]:getSharedObject()
 
     ---@type ClientContextMenuProvider
-    local contextMenuProvider = {
+    local contextMenuProvider
+    contextMenuProvider = {
         openMenu = function(options)
             local elements = {
                 {
@@ -23,6 +24,7 @@ RegisterOnResourceStart("contextMenu", function()
             ESX.OpenContext("right", elements, function(menu, element)
                 if element.onSelect then
                     element.onSelect()
+                    contextMenuProvider.closeMenu()
                 end
             end, options.onClose)
         end,
