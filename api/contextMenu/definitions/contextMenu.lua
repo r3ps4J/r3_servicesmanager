@@ -10,6 +10,7 @@
 ---@field id string
 ---@field title string
 ---@field elements ContextMenuElement[]
+--- Gets called when the menu is closed by the user or using closeMenu, can be called when an element was selected but this is provider dependent and not always the case
 ---@field onClose? fun(): nil
 
 ---@class ClientContextMenuProvider
